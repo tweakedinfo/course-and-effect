@@ -13,6 +13,9 @@ import mappings.*
 
 type CoursePage = (String, String, (Course) => VHtmlContent)
 
+
+case class CourseLearningOutcome(text:String)
+
 /**
   * A representation of a course (degree)
   *
@@ -25,7 +28,8 @@ case class Course(
   code:String, name:String,
   structure: Plan,
   plans: Seq[(String, Plan)],
-  pages: Seq[CoursePage] = Seq.empty
+  pages: Seq[CoursePage] = Seq.empty, 
+  learningOutcomes: Seq[CourseLearningOutcome] = Seq.empty
 )
 
 
@@ -35,6 +39,7 @@ trait JSCourse extends js.Object:
   val structure:js.Array[JSPlanComponent]
   val plans:js.Dictionary[js.Array[JSPlanComponent]]
   val pages:js.UndefOr[js.Array[CoursePage]]
+  val learningOutcomes:js.UndefOr[js.Array[String]]
 
 given Conversion[Seq[JSPrereqElement], Seq[PrereqElement]] with 
   def apply(j:Seq[JSPrereqElement]) = j.map {
@@ -64,7 +69,8 @@ def addCourse(config:JSCourse): Unit = {
       structure = config.structure.map(toScala).toSeq,
       plans = for (name, jsplan) <- config.plans.toSeq yield
         name -> jsplan.map(toScala).toSeq,
-      pages = config.pages.toOption.toSeq.flatten
+      pages = config.pages.toOption.toSeq.flatten,
+      learningOutcomes = config.learningOutcomes.toOption.toSeq.flatten.map(CourseLearningOutcome.apply _)
     )
 
     courses.append(c)

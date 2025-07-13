@@ -1,8 +1,8 @@
 enablePlugins(ScalaJSPlugin)
 
-name := "acsmappings2022"
+name := "course-and-effect"
 //organization := "com.wbillingsley"
-scalaVersion := "3.3.3"
+scalaVersion := "3.3.6"
 
 // Don't automatically call main
 scalaJSUseMainModuleInitializer := false
