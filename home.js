@@ -7,9 +7,18 @@
  */
 
 let text = `
-## Lightweight mappings for CBoK, SWEBOK, DSBOK, and Identity Verification
+## Course-and-Effect
 
-This site generates mappings and tabulations of various mappings for our courses. The rationale is described in 
+This site generates mappings and tabulations of various mappings for our courses, including the 
+evidence of learning and assessment security that exists within courses.
+
+Why "Course and Effect" - well, from a computer science perspective, the evidence of learning are
+the externally recordable effects of your work. For more on this, see the original paper at
+
+> Billingsley, W. (2024). If cheating is optimisation then assessment must not be pure: Effect tracking and assessment. *Learning Letters*, 4, 28. https://doi.org/10.59453/ll.v4.28
+
+
+For the prebious paper that just mapped security mechanisms at subject level, see:
 
 > Billingsley, W. (2022). Lightweight Mapping of Identify Verification Methods and Secondary Course Aspects: “Swiss Cheese” Modelling.
 > In S. Wilson, N. Arthars, D.Wardak, P. Yeoman, E. Kalman, & D.Y.T. Liu (Eds.), Reconnecting relationships through technology. 

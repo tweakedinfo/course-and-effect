@@ -110,10 +110,24 @@ case class PlanEffectWidget(plan:Plan) extends DHtmlComponent {
   val assessmentTables = Styling(
     """
       |display: flex;
-      |flex-direction: vertical;
+      |flex-direction: column;
       |width: 100%;
       |""".stripMargin
   ).modifiedBy(
+    " .assessment-entry" -> "display: flex; flex: 0 auto; gap: 5px; align-items: baseline;",
+    " .name" -> "font-weight: bold",
+    " .pass-weight" -> "font-style: italic;",
+    " .pass-hurdle" -> "font-style: italic; background: lavenderblush; border-radius: 5px; padding: 3px; font-size: 80%;",
+    " .integrity-row" -> "margin-left: 3em;",
+    " .integrity-row .ObservedWork" -> "color: brown;",
+    " .integrity-row .ExternalRecords" -> "color: darkblue;",
+    " .integrity-row .HumanInteraction" -> "color: darkgreen;",
+    " .syntax" -> "font-style: italic;",
+    " .integrity-row .Audit" -> "color: darkgreen;",
+    " .integrity-row .Investigated" -> "color: brown;",
+    " .integrity-row .Required" -> "color: darkgreen;",
+    " .integrity-row .Weighted" -> "color: darkblue;",
+
   ).register()
 
 
@@ -129,10 +143,50 @@ case class PlanEffectWidget(plan:Plan) extends DHtmlComponent {
     if s.prereq.nonEmpty then <.div(^.cls := "requires", "requires: ", s.prereq.stringify) else None
   )
 
+  def assessmentDetails(a:Assessment):DHtmlContent = 
+    <.div(^.cls := assessmentTables,
+      <.div(^.cls := "assessment-entry",
+        <.h6(^.cls := "name", a.name), 
+        a.passContribution map {
+          case PassContribution.Weighted(fraction) => <.span(^.cls := "pass-weight", s"weighted $fraction%")
+          case PassContribution.Hurdle => <.span(^.cls := "pass-hurdle", "hurdle")
+        },
+      ),
+      
+      for (ev, req) <- a.integrityAssurance yield 
+        <.div(^.cls := "integrity-row",
+          <.span(^.cls := "syntax", "produces: "),
+          <.span(^.cls := ev.effect.toString(), 
+              ev match
+                case LearningEvidence.ObserverReport => "observer report"
+                case LearningEvidence.ProctorReport => "proctoring report"
+                case LearningEvidence.Performance => "watched performance"
+                case LearningEvidence.ClientReport => "client report"
+                case LearningEvidence.PeerReport => "peer report"
+                case LearningEvidence.Discussions => "logged discussions"
+                case LearningEvidence.VersionHistory => "version history"
+                case LearningEvidence.SystemLogs => "system logs"            
+            ),
+          "; ",
+          <.span(^.cls := "syntax", "consideration: "),
+          <.span(^.cls := ( req match {
+            case EvidenceRequirement.Weighted(fraction) => "Weighted"
+            case x => x.toString
+          }), 
+              req match
+                case EvidenceRequirement.Audit => " auditable"
+                case EvidenceRequirement.Investigated => " investigation trigger only"
+                case EvidenceRequirement.Weighted(fraction) => s" assessed $fraction%"
+                case EvidenceRequirement.Required => " required to pass"
+            )
+        
+        )
+    )
+
+
   def assessmentDetails(s:Subject):DHtmlContent = 
     <.div(^.cls := assessmentTables,
-      "Goes here"
-
+      for a <- s.assessments if a.integrityAssurance.nonEmpty yield assessmentDetails(a)
     )
 
   def subjectBox(offset:Int, s:Subject):DHtmlContent = 
@@ -259,9 +313,32 @@ import js.JSConverters.*
 @JSExportTopLevel("effects")
 @JSExportAll
 object EffectsJs {
+  val page = ("Learning Evidence", "course-effects", effectPage)
+}
 
-  val v0_1 = (    
-    Map("page" -> ("Learning Evidence", "course-effects", effectPage))
-  ).toJSDictionary
+@JSExportTopLevel("grade")
+@JSExportAll
+object grade {
+  val hurdle = PassContribution.Hurdle
+  def weighted(frac:Double) = PassContribution.Weighted(frac)
+}
+
+@JSExportTopLevel("evidence")
+@JSExportAll
+object ev {
+  val audited = EvidenceRequirement.Audit
+  def marked(frac:Double) = EvidenceRequirement.Weighted(frac)
+  val required = EvidenceRequirement.Required
+  val investigated = EvidenceRequirement.Investigated
+
+  val logs = LearningEvidence.SystemLogs
+  val versionHistory = LearningEvidence.VersionHistory
+  val peerReport = LearningEvidence.PeerReport
+  val clientReport = LearningEvidence.ClientReport
+  val observerReport = LearningEvidence.ObserverReport
+  val discussions = LearningEvidence.Discussions
+  val proctorReport = LearningEvidence.ProctorReport
+  val performance = LearningEvidence.Performance
 
 }
+

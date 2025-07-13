@@ -2,6 +2,8 @@
 
 console.log("Loading units")
 
+console.log(proctoredExam("Final Examination", 35, true))
+
 addUnits([
     {
       code: "AMTH140",
@@ -33,6 +35,9 @@ addUnits([
 
 
       ],
+      assessments: [
+        proctoredExam("Final Examination", 60, true)
+      ]
     },
 
 
@@ -457,6 +462,9 @@ addUnits([
         cs2023ai.FundamentalIssues,
 
         idverify.ProctoredExam, idverify.TurnItIn, idverify.PersonalisedAssessment 
+      ],
+      assessments: [
+        proctoredExam("Final Examination", 35, true)
       ]
     },
 
@@ -469,7 +477,10 @@ addUnits([
         cbok.v3_2.Computing.level(2), cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Depth.level(1),
         swebok.Construction, swebok.Design, swebok.ModelsAndMethods,
         ccdsc.PDA, ccdsc.CCF, ccdsc.SDM, 
-        idverify.Video ]
+        idverify.Video ],
+      assessments: [
+        proctoredExam("Final Examination", 40, true)
+      ]
     },
 
     {
@@ -529,7 +540,28 @@ addUnits([
         cybok.SS, cybok.SAPS,
 
         idverify.TurnItIn, idverify.GroupWork, idverify.Project, idverify.DataTrails, idverify.Video ],
-      tags: [ "adv?" ]
+      tags: [ "adv?" ], 
+      assessments: [
+        assessment({
+          name: "Collaborative project",
+          grade: [ grade.weighted(45) ],
+          ev: [ 
+            [ evidence.discussions, evidence.marked(15) ],
+            [ evidence.versionHistory, evidence.marked(40) ],
+            [ evidence.peerReport, evidence.audited ],
+            [ evidence.logs, evidence.audited ],
+          ]
+        }),
+        assessment({
+          name: "Individual contribution",
+          grade: [ grade.weighted(25) ],
+          ev: [ 
+            [ evidence.versionHistory, evidence.marked(25) ],
+            [ evidence.peerReport, evidence.audited ],
+            [ evidence.logs, evidence.audited ],
+          ]
+        }),
+      ]
     },
 
     {
@@ -548,7 +580,10 @@ addUnits([
         cs2023ai.FKRR, cs2023ai.Search,
 
       ],
-      tags: ["adv?"]
+      tags: ["adv?"],
+      assessments: [
+        proctoredExam("Final Examination", 60, true)
+      ]
     },
 
     {
@@ -683,7 +718,19 @@ addUnits([
         ccdsc.PR, edison.PM,
         idverify.GroupWork, idverify.Project, idverify.TurnItIn, idverify.Video, idverify.Oral 
       ],
-      tags: [ "Advanced", "Capstone" ],
+      tags: [ "Advanced", "Capstone" ], 
+      assessments: [
+        assessment({
+          name: "Industry project",
+          grade: [ grade.hurdle ],
+          ev: [ 
+            [ evidence.clientReport, evidence.marked(5) ],
+            [ evidence.discussions, evidence.marked(20) ],
+            [ evidence.peerReport, evidence.audited ],
+            [ evidence.versionHistory, evidence.audited ],
+          ]
+        }),
+      ]
     },
 
     {

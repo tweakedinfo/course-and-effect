@@ -97,7 +97,8 @@ case class Subject(
  handbookUrl:String,
  mappings:Set[Any], 
  prereq: Seq[PrereqElement],
- tags: Seq[String] = Seq.empty
+ tags: Seq[String] = Seq.empty,
+ assessments: Seq[Assessment] = Seq.empty
 ) {
 
 }
@@ -128,12 +129,17 @@ def addUnit(config:js.Dynamic) = {
         case s:String => PrereqElement.unit(s)
         case p:PrereqElement => p
       }).toSeq,
-      tags = if config.tags then config.tags.asInstanceOf[js.Array[String]].toSeq else Seq.empty
+      tags = if config.tags then config.tags.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
+
+      assessments = if config.assessments then config.assessments.asInstanceOf[js.Array[Assessment]].toSeq else Seq.empty,
     )
 
     subjects.append(s)
   } catch {
-    case _ => // TODO: something with the errors
+    case x => 
+      org.scalajs.dom.window.console.error("Failed to parse unit config", config, x)
+      
+      // TODO: something with the errors
   }
 }
 

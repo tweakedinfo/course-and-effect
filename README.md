@@ -1,24 +1,15 @@
-# Effect-tracking for academic integrity
+## Course-and-Effect
 
-This site explores a lightweight mechanism for tracking the academic integrity mechanisms across a course of study, in a manner similar to "effect tracking" in functional code.
+This site generates mappings and tabulations of various mappings for our courses, including the 
+evidence of learning and assessment security that exists within courses.
 
-Rather than write the initial experiment as a compiler, this is a library written in Scala that produces a language-like JavaScript API for describing assessment. 
-This then lets us produce reports and analyis of how learning outcomes, academic integrity management, and various curriculum mappings are handled across a degree.
+Why "Course and Effect" - well, from a computer science perspective, the evidence of learning are
+the externally recordable effects of your work. For more on this, see the original paper at
 
-It is built on an earlier system used for accreditation course mapping in computer science.
-
-It is a work-in-progress. Documentation to follow
-
-
----
-
-## The content below is from the original system's readme
+> Billingsley, W. (2024). If cheating is optimisation then assessment must not be pure: Effect tracking and assessment. *Learning Letters*, 4, 28. https://doi.org/10.59453/ll.v4.28
 
 
-This site generates some of our mappings.
-It's intended to be easy(ish) to play around with.
-
-The rationale is described in 
+For the prebious paper that just mapped security mechanisms at subject level, see:
 
 > Billingsley, W. (2022). Lightweight Mapping of Identify Verification Methods and Secondary Course Aspects: “Swiss Cheese” Modelling.
 > In S. Wilson, N. Arthars, D.Wardak, P. Yeoman, E. Kalman, & D.Y.T. Liu (Eds.), Reconnecting relationships through technology. 
@@ -27,6 +18,8 @@ The rationale is described in
 
 Course and unit definitions (and the homepage) are defined simply in JS. Just edit and reload.
 It's only if you want to write slide-decks (or do fancier stuff) you'd need Scala.
+
+### Getting the software
 
 To grab a copy and view it on your computer:
 
@@ -45,6 +38,7 @@ To edit the source code or write slide-decks, you'll need [sbt](https://scala-sb
 2. Edit the Scala
 3. `sbt fastDeployScript` to recompile the JavaScript so you can view it on your own computer.
 4. Push the site to GitHub to publish it. An included Action will compile the site up on 
+
 
 
 ## units.js

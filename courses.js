@@ -54,7 +54,7 @@ addCourses([
     },
     pages: [
       // cbok.old.page, 
-      cbok.v3_2.page, cs2023ai.page, effects.v0_1.page
+      cbok.v3_2.page, cs2023ai.page, effects.page
     ],
     learningOutcomes: [
       "design, develop, test, and deliver computer programs to solve complex problems, both individually and as part of a collaborative development team;",
