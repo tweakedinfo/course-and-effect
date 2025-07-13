@@ -2,6 +2,8 @@
 
 console.log("Loading units")
 
+console.log(proctoredExam("Final Examination", 35, true))
+
 addUnits([
     {
       code: "AMTH140",
@@ -13,13 +15,29 @@ addUnits([
         cbok.old.Fundamentals.level(2),
         cbok.old.Cybersecurity.level(1),
 
+        cbok.v3_2.Fundamentals.level(2),
+        cbok.v3_2.Data.level(1),
+        cbok.v3_2.Infrastructure.level(1),
+        cbok.v3_2.Cybersecurity.level(1),
+        cbok.v3_2.Depth.level(1),
+
+
+
         ccdsc.CCF, ccdsc.PDA,
         edison.SDMA, // Discrete Mathematics is KU1.01.12 within this category
         edison.SEC, // Cryptography
 
-        swebok.MathFoundations
+        swebok.MathFoundations,
+
+        cybok.SS,
+
+        cs2023ai.Logical,
+
 
       ],
+      assessments: [
+        proctoredExam("Final Examination", 60, true)
+      ]
     },
 
 
@@ -29,6 +47,8 @@ addUnits([
       prereq: [ "PMTH212" ],
       mappings: [ 
         cbok.old.Programming.level(1),
+
+        cbok.v3_2.Computing.level(1),
       
         ccdsc.PDA,
         edison.SMDA, // KU1.01.14 Mathematical software and tools (Matlab) 
@@ -43,6 +63,7 @@ addUnits([
       prereq: [ or("MTHS120", "MTHS130")],
       mappings: [ 
         cbok.old.Programming.level(1),
+        cbok.v3_2.Computing.level(1),
 
         ccdsc.PDA,
         edison.SMDA, // KU1.01.14 Mathematical software and tools (Matlab) 
@@ -57,6 +78,9 @@ addUnits([
       prereq: [ choose(1, "MTHS110", "MTHS120", "MTHS130")],
       amppings: [ 
         cbok.old.Programming.level(1),
+
+        cbok.v3_2.Computing.level(1),
+        cbok.v3_2.Data.level(1),
         
         ccdsc.AP, 
         edison.SDMA, // KU1.01.14 Mathematical software and tools (Matlab) 
@@ -129,7 +153,16 @@ addUnits([
       code: "PMTH338",
       name: "Number Theory",
       prereq: [ "AMTH140" ], 
-      mappings: [ ccdsc.AP, edison.SMDA ],
+      mappings: [ 
+        cbok.old.Fundamentals.level(2),
+        cbok.v3_2.Data.level(2),
+
+        ccdsc.AP, edison.SMDA,
+
+        cybok.SS,
+
+
+      ],
     },
 
 
@@ -161,6 +194,7 @@ addUnits([
       prereq: [], 
       mappings: [
         cbok.old.Data.level(2), 
+        cbok.v3_2.Data.level(2), cbok.v3_2.Depth.level(1),
         swebok.MathFoundations, swebok.EngFoundations,
         ccdsc.AP, edison.SMDA,
         idverify.PersonalisedAssessment, idverify.TurnItIn 
@@ -173,6 +207,8 @@ addUnits([
       prereq: [ choose(1, "STAT100", "AMTH250", "SCI210") ],
       mappings: [ 
         cbok.old.Data.level(2), 
+        cbok.v3_2.Data.level(2), cbok.v3_2.Depth.level(2),
+
         swebok.MathFoundations, swebok.EngFoundations,
         ccdsc.AP, ccdsc.DM, 
         edison.SMDA,
@@ -189,6 +225,8 @@ addUnits([
       prereq: [ "candidature in a pg award" ],
       mappings: [ 
         cbok.old.Data.level(2), 
+        cbok.v3_2.Data.level(2), 
+
         ccdsc.AP, ccdsc.DM, 
         edison.SMDA, 
         edison.ML, // KU1.01.02 Regression
@@ -203,7 +241,9 @@ addUnits([
       name: "Advanced Statistical Modelling",
       prereq: [ "candidature in a pg award" ],
       mappings: [ 
-        cbok.old.Data.level(2) , 
+        cbok.old.Data.level(2) ,
+        cbok.v3_2.Data.level(2) ,
+
         ccdsc.AP, ccdsc.DM, 
         edison.SMDA, 
         edison.RM,
@@ -219,10 +259,15 @@ addUnits([
       prereq: [ "MTHS120", "MTHS130" ],
       mappings: [ 
         cbok.old.Data.level(3),
+        cbok.v3_2.Data.level(3), cbok.v3_2.Depth.level(2),
+
         ccdsc.AP, ccdsc.AI, 
         edison.SDMA,
         edison.ML, // KU1.01.05 Probabilistic reasoning 
         edison.MODSIM,
+
+        cs2023ai.Probabilistic, cs2023ai.FKRR, cs2023ai.Agents,
+
         idverify.PersonalisedAssessment, idverify.TurnItIn ]
     },
 
@@ -232,6 +277,8 @@ addUnits([
       prereq: [ "MATH260" ],
       mappings: [ 
         cbok.old.Data.level(3),
+        cbok.v3_2.Data.level(3),
+
         ccdsc.AP, ccdsc.AI, 
         edison.SDMA, 
         edison.ML, // KU1.01.05 Probabilistic reasoning 
@@ -244,6 +291,7 @@ addUnits([
       prereq: [ "STAT210" ],
       mappings: [ 
         cbok.old.Data.level(3),
+        cbok.v3_2.Data.level(3), cbok.v3_2.Depth.level(3),
         ccdsc.AP, ccdsc.AI, ccdsc.DM, 
         edison.SDMA, 
         edison.ML, // KU1.01.05 Probabilistic reasoning 
@@ -257,6 +305,7 @@ addUnits([
       prereq: [ "STAT210" ],
       mappings: [ 
         cbok.old.Data.level(3),
+        cbok.v3_2.Data.level(3), cbok.v3_2.Depth.level(3),
         swebok.MathFoundations, swebok.EngFoundations, swebok.Construction,
         ccdsc.AP, ccdsc.DM, ccdsc.ML, 
         edison.SDMA, edison.ML, edison.DM,
@@ -271,6 +320,7 @@ addUnits([
       prereq: [ "STAT100", "candidature in MDatSci or pg award" ],
       mappings: [ 
         cbok.old.Data.level(3),
+        cbok.v3_2.Data.level(3),
         ccdsc.AP, ccdsc.DM, ccdsc.ML, 
         edison.SDMA, edison.ML, edison.DM,
         idverify.TurnItIn, idverify.Oral ]
@@ -283,6 +333,7 @@ addUnits([
       prereq: [ cp(96), "or enrolment in pg award" ],
       cbok: [ 
         cbok.old.Programming.level(2), cbok.old.Data.level(2), 
+        cbok.v3_2.Computing.level(2), cbok.v3_2.Data.level(2), 
         ccdsc.AP, ccdsc.PDA, ccdsc.CCF, edison.SMDA,
         idverify.ProctoredExam,
       ],
@@ -296,6 +347,7 @@ addUnits([
       prereq: [ cp(48), "permission of HoS"],
       mappings: [ 
         cbok.old.Data.level(3), cbok.old.ProblemSolving.level(3),
+        cbok.v3_2.Data.level(3), cbok.v3_2.Fundamentals.level(3),
         edison.RM,
         idverify.TurnItIn, idverify.Project, idverify.PersonalisedAssessment 
       ],
@@ -308,6 +360,7 @@ addUnits([
       prereq: [], 
       mappings: [ 
         cbok.old.Data.level(2),
+        cbok.v3_2.Data.level(2),
         ccdsc.AP, edison.SDMA,
         idverify.ProctoredExam 
       ]
@@ -319,6 +372,8 @@ addUnits([
       prereq: [], 
       mappings: [ 
         cbok.old.Data.level(2),
+        cbok.v3_2.Data.level(2),
+
         ccdsc.AP, edison.SDMA,
         idverify.ProctoredExam 
       ]
@@ -330,9 +385,14 @@ addUnits([
       prereq: [],
       mappings: [ 
         cbok.old.Ethics.level(1), cbok.old.Societal.level(1), cbok.old.HumanFactors.level(1), cbok.old.ProblemSolving.level(1), cbok.old.Programming.level(1),
+
+        cbok.v3_2.Ethics.level(1), cbok.v3_2.Impacts.level(1), cbok.v3_2.Application.level(1), cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Computing.level(1), cbok.v3_2.Data.level(1), cbok.v3_2.Depth.level(1),
+
         swebok.MathFoundations, swebok.CompFoundations, swebok.EngFoundations, swebok.Construction,
         ccdsc.CCF, ccdsc.PDA,
         edison.TDM, // text processing of Beatrix Potter in "Little Data"
+
+        cs2023ai.FundamentalIssues, cs2023ai.FKRR, cs2023ai.NLP, cs2023ai.Search, cs2023ai.Robotics, cs2023ai.Applications
       ],
       other: []
     },
@@ -343,6 +403,7 @@ addUnits([
       prereq: [],
       mappings: [ 
         cbok.old.Fundamentals.level(1), cbok.old.Understanding.level(1), cbok.old.Data.level(1),
+        cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Infrastructure.level(1), cbok.v3_2.Data.level(1), cbok.v3_2.Computing.level(1), cbok.v3_2.Depth.level(1),
         swebok.MathFoundations, swebok.CompFoundations,
         ccdsc.CCF 
       ],
@@ -355,6 +416,9 @@ addUnits([
       prereq: [],
       mappings: [ 
         cbok.old.ProblemSolving.level(2), cbok.old.Teamwork.level(2), cbok.old.Communication.level(2), cbok.old.Networking.level(1), cbok.old.HumanFactors.level(1),
+
+        cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Collaboration.level(2), cbok.v3_2.Communication.level(2), cbok.v3_2.Infrastructure.level(1), cbok.v3_2.Application.level(1), cbok.v3_2.Depth.level(1),
+
         swebok.MathFoundations, swebok.CompFoundations, swebok.Construction, swebok.ProfPractice,
         ccdsc.CCF, ccdsc.AP, ccdsc.PDA, ccdsc.PR,
         idverify.GroupWork, idverify.Video ]
@@ -366,9 +430,18 @@ addUnits([
       prereq: [ choose(2, "COSC110", "STAT110") ],
       mappings: [  
         cbok.old.Programming.level(2), cbok.old.Teamwork.level(2), cbok.old.Communication.level(2), cbok.old.Data.level(1), cbok.old.ProblemSolving.level(1),
+
+        cbok.v3_2.Computing.level(2), cbok.v3_2.Collaboration.level(2), cbok.v3_2.Communication.level(2), cbok.v3_2.Data.level(1), cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Depth.level(1),
+
         swebok.MathFoundations, swebok.CompFoundations, swebok.EngFoundations, swebok.ProfPractice,
         ccdsc.CCF, ccdsc.AP, ccdsc.PDA, ccdsc.PR,
         edison.DSDA,  
+
+        cybok.AD, 
+
+        cs2023ai.FundamentalIssues, cs2023ai.FKRR, cs2023ai.Applications,
+
+
         idverify.GroupWork, idverify.Video ]
     },
 
@@ -379,10 +452,19 @@ addUnits([
       prereq: [],
       mappings: [ 
         cbok.old.Ethics.level(1), cbok.old.ProfExpectations.level(1), cbok.old.Teamwork.level(1), cbok.old.Societal.level(2), cbok.old.Understanding.level(1), cbok.old.Communication.level(1), cbok.old.Programming.level(2), cbok.old.Fundamentals.level(1),
+
+        cbok.v3_2.Ethics.level(1), cbok.v3_2.Practitioner.level(1), cbok.v3_2.Collaboration.level(1), cbok.v3_2.Impacts.level(2), cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Communication.level(1), cbok.v3_2.Computing.level(2), cbok.v3_2.Depth.level(1),
+        
         swebok.CompFoundations, swebok.Construction, swebok.Testing,
         ccdsc.PDA, ccdsc.PR, ccdsc.CCF, ccdsc.SDM,
         edison.DSAPPD, // KU2.06.05 Python
+
+        cs2023ai.FundamentalIssues,
+
         idverify.ProctoredExam, idverify.TurnItIn, idverify.PersonalisedAssessment 
+      ],
+      assessments: [
+        proctoredExam("Final Examination", 35, true)
       ]
     },
 
@@ -392,9 +474,13 @@ addUnits([
       prereq: [ "COSC110" ],
       mappings: [ 
         cbok.old.Programming.level(2), cbok.old.ProblemSolving.level(1),
+        cbok.v3_2.Computing.level(2), cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Depth.level(1),
         swebok.Construction, swebok.Design, swebok.ModelsAndMethods,
         ccdsc.PDA, ccdsc.CCF, ccdsc.SDM, 
-        idverify.Video ]
+        idverify.Video ],
+      assessments: [
+        proctoredExam("Final Examination", 40, true)
+      ]
     },
 
     {
@@ -403,10 +489,16 @@ addUnits([
       prereq: [ "COSC110" ],
       mappings: [ 
         cbok.old.ProblemSolving.level(1), cbok.old.Societal.level(1), cbok.old.Data.level(3), cbok.old.Networking.level(2), cbok.old.Systems.level(1), cbok.old.Cybersecurity.level(1),       
+
+        cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Impacts.level(1), cbok.v3_2.Data.level(3), cbok.v3_2.Infrastructure.level(2), cbok.v3_2.Application.level(1), cbok.v3_2.Cybersecurity.level(1), cbok.v3_2.Depth.level(2), 
+
         swebok.Construction, swebok.Design, swebok.ModelsAndMethods,
         ccdsc.DG, ccdsc.SDM,
         edison.DMS,
         edison.EDMI,
+
+        cybok.SS, 
+
         idverify.TurnItIn ]
     },
 
@@ -415,15 +507,27 @@ addUnits([
       name: "Software Development Studio 2",
       prereq: [ "COSC120" ],
       mappings: [
-        cbok.old.ProblemSolving.level(3), 
+        cbok.old.ProblemSolving.level(2), 
         cbok.old.Ethics.level(1), 
-        cbok.old.ProfExpectations.level(3), 
+        cbok.old.ProfExpectations.level(2), 
         cbok.old.Teamwork.level(2), 
         cbok.old.Communication.level(2), 
         cbok.old.Societal.level(2),
-        cbok.old.Understanding.level(2), cbok.old.Data.level(3), cbok.old.Programming.level(3), cbok.old.HumanFactors.level(2), cbok.old.Systems.level(2), 
+        cbok.old.Understanding.level(2), cbok.old.Data.level(2), cbok.old.Programming.level(3), cbok.old.HumanFactors.level(2), cbok.old.Systems.level(2), cbok.old.Networking.level(2),
         cbok.old.ProjectManagement.level(2), cbok.old.ServiceManagement.level(1),
-      
+
+        cbok.v3_2.Fundamentals.level(2), 
+        cbok.v3_2.Ethics.level(1), 
+        cbok.v3_2.Practitioner.level(2), 
+        cbok.v3_2.Collaboration.level(2), 
+        cbok.v3_2.Communication.level(2), 
+        cbok.v3_2.Impacts.level(2),
+        
+        cbok.v3_2.Data.level(2), cbok.v3_2.Computing.level(3), cbok.v3_2.Application.level(2), cbok.v3_2.Projects.level(2), cbok.v3_2.Infrastructure.level(2), 
+        cbok.v3_2.Governance.level(1), cbok.v3_2.Cybersecurity.level(2),
+        cbok.v3_2.Depth.level(2),
+
+
         swebok.Requirements, swebok.Design, swebok.Construction, swebok.Testing, swebok.Maintenance,
         swebok.ConfigManagement, swebok.EngManagement, swebok.Process, swebok.ModelsAndMethods, swebok.Quality, 
         swebok.ProfPractice, swebok.EngFoundations,
@@ -433,8 +537,31 @@ addUnits([
         edison.CCT, // VMs & containers
         edison.DSAPPD, // Software engineering methods, testing
 
+        cybok.SS, cybok.SAPS,
+
         idverify.TurnItIn, idverify.GroupWork, idverify.Project, idverify.DataTrails, idverify.Video ],
-      tags: [ "adv?" ]
+      tags: [ "adv?" ], 
+      assessments: [
+        assessment({
+          name: "Collaborative project",
+          grade: [ grade.weighted(45) ],
+          ev: [ 
+            [ evidence.discussions, evidence.marked(15) ],
+            [ evidence.versionHistory, evidence.marked(40) ],
+            [ evidence.peerReport, evidence.audited ],
+            [ evidence.logs, evidence.audited ],
+          ]
+        }),
+        assessment({
+          name: "Individual contribution",
+          grade: [ grade.weighted(25) ],
+          ev: [ 
+            [ evidence.versionHistory, evidence.marked(25) ],
+            [ evidence.peerReport, evidence.audited ],
+            [ evidence.logs, evidence.audited ],
+          ]
+        }),
+      ]
     },
 
     {
@@ -443,11 +570,20 @@ addUnits([
       prereq: [ "AMTH140", "COSC120", choose(1, "COSC101", "COSC110", "SCI210", "AMTH250") ],
       mappings: [ 
         cbok.old.Fundamentals.level(2), cbok.old.Programming.level(2),
+
+        cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Computing.level(2), cbok.v3_2.Depth.level(2),
+
         swebok.MathFoundations, swebok.CompFoundations, swebok.Construction, swebok.ModelsAndMethods, swebok.Design,
         ccdsc.PDA, ccdsc.SDM,
         edison.BDSE, // software systems development
+
+        cs2023ai.FKRR, cs2023ai.Search,
+
       ],
-      tags: ["adv?"]
+      tags: ["adv?"],
+      assessments: [
+        proctoredExam("Final Examination", 60, true)
+      ]
     },
 
     {
@@ -456,18 +592,27 @@ addUnits([
       prereq: [ "COSC120" ],
       mappings: [ 
         cbok.old.ProblemSolving.level(2), cbok.old.Societal.level(1), cbok.old.Understanding.level(2), cbok.old.Fundamentals.level(2), cbok.old.Networking.level(2), cbok.old.Programming.level(3), cbok.old.Systems.level(1), cbok.old.Cybersecurity.level(2),
+
+        cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Impacts.level(1), cbok.v3_2.Infrastructure.level(2), cbok.v3_2.Computing.level(3), cbok.v3_2.Cybersecurity.level(2), cbok.v3_2.Depth.level(2),
+
         swebok.CompFoundations,
         ccdsc.CCF, ccdsc.DP, edison.SEC,  
+
+        cybok.SS, cybok.IS,
+
         idverify.ProctoredExam, idverify.PersonalisedAssessment 
       ]
     },
 
     {
       code: "COSC250",
-      name: "Functional and Reactive Programming",
+      name: "Programming Paradigms",
       prereq: [ "COSC120", choose(1, "COSC101", "COSC110", "SCI210", "AMTH250") ],
       mappings: [ 
         cbok.old.Understanding.level(1), cbok.old.Programming.level(3), cbok.old.Systems.level(2),
+
+        cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Computing.level(3), cbok.v3_2.Depth.level(3),
+
         swebok.Design, swebok.Construction, swebok.Testing, swebok.ModelsAndMethods, swebok.MathFoundations, swebok.CompFoundations,
       
         ccdsc.BDS, // akka, streams. Functional programming approaches tend to be used in Spark, Kafka 
@@ -478,6 +623,8 @@ addUnits([
         edison.BDSE, // Akka
         edison.DSAPPD, // Scala
         edison.BDI, // Scalable computing. Parallel and distributed architecture (actors)
+
+        cs2023ai.Search, cs2023ai.Agents, cs2023ai.Logical,
         
        
         idverify.ProctoredExam, idverify.Video 
@@ -491,6 +638,9 @@ addUnits([
       prereq: [ choose(2, "COSC101", "COSC110", "COSC120") ],
       mappings: [ 
         cbok.old.Societal.level(1), cbok.old.Networking.level(2), cbok.old.Programming.level(2), cbok.old.HumanFactors.level(2), cbok.old.Systems.level(2), cbok.old.Cybersecurity.level(2),
+
+        cbok.v3_2.Application.level(1), cbok.v3_2.Infrastructure.level(2), cbok.v3_2.Computing.level(2), cbok.v3_2.Infrastructure.level(2), cbok.v3_2.Cybersecurity.level(2), cbok.v3_2.Depth.level(2),
+
         swebok.Construction, swebok.Requirements,
         ccdsc.CCF, ccdsc.SDM, ccdsc.AP,
         idverify.ProctoredExam 
@@ -512,11 +662,17 @@ addUnits([
       prereq: [ choose(1, "COSC210", "COSC220") ],
       mappings: [ 
         cbok.old.Ethics.level(2), cbok.old.ProfExpectations.level(2), cbok.old.Teamwork.level(2), cbok.old.Communication.level(3), cbok.old.Systems.level(2), cbok.old.Governance.level(3), cbok.old.ProjectManagement.level(3), cbok.old.HumanFactors.level(2),
+       
+        cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(2), cbok.v3_2.Communication.level(3), cbok.v3_2.Projects.level(2), cbok.v3_2.Governance.level(3), cbok.v3_2.Application.level(2), cbok.v3_2.Impacts.level(2),
+
+
         swebok.Requirements, swebok.Maintenance, swebok.EngManagement, swebok.Process, swebok.Quality, swebok.ProfPractice, swebok.Economics,
       
         ccdsc.PR, ccdsc.DP,
         edison.PM,
-        edison.DGOV,      
+        edison.DGOV,     
+        
+        cybok.HORA,
       
         idverify.ProctoredExam, idverify.GroupWork, idverify.TurnItIn, idverify.Video,
       ],
@@ -531,6 +687,10 @@ addUnits([
       mappings: [ 
         cbok.old.Ethics.level(2), cbok.old.ProfExpectations.level(2), cbok.old.Teamwork.level(2), cbok.old.Communication.level(3), cbok.old.Systems.level(2), cbok.old.Governance.level(3), 
         cbok.old.ProjectManagement.level(3), cbok.old.HumanFactors.level(2),
+
+        cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(2), cbok.v3_2.Communication.level(3), cbok.v3_2.Projects.level(2), cbok.old.Governance.level(3), 
+        cbok.v3_2.Application.level(2),
+
 
         swebok.Requirements, swebok.Maintenance, swebok.EngManagement, swebok.Process, swebok.Quality, swebok.ProfPractice, swebok.Economics,
         
@@ -550,12 +710,27 @@ addUnits([
       prereq: [ "COSC220", "COSC310", cp(96) ],
       mappings: [ 
         cbok.old.ProblemSolving.level(3), cbok.old.Ethics.level(2), cbok.old.ProfExpectations.level(2), cbok.old.Teamwork.level(3), cbok.old.Communication.level(3), cbok.old.Systems.level(3), cbok.old.ProjectManagement.level(3), cbok.old.Understanding.level(2),
+
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(3), cbok.v3_2.Communication.level(3), cbok.v3_2.Application.level(3), cbok.v3_2.Projects.level(3), cbok.v3_2.Depth.level(3),
+
         
         swebok.Requirements, swebok.Construction, swebok.EngManagement, swebok.Process, swebok.Quality, swebok.ProfPractice,
         ccdsc.PR, edison.PM,
         idverify.GroupWork, idverify.Project, idverify.TurnItIn, idverify.Video, idverify.Oral 
       ],
-      tags: [ "Advanced", "Capstone" ],
+      tags: [ "Advanced", "Capstone" ], 
+      assessments: [
+        assessment({
+          name: "Industry project",
+          grade: [ grade.hurdle ],
+          ev: [ 
+            [ evidence.clientReport, evidence.marked(5) ],
+            [ evidence.discussions, evidence.marked(20) ],
+            [ evidence.peerReport, evidence.audited ],
+            [ evidence.versionHistory, evidence.audited ],
+          ]
+        }),
+      ]
     },
 
     {
@@ -606,6 +781,8 @@ addUnits([
       mappings: [ 
         cbok.old.Fundamentals.level(3), cbok.old.Data.level(3), cbok.old.Networking.level(3), cbok.old.Systems.level(2),
 
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Computing.level(3), cbok.v3_2.Depth.level(3),
+
         swebok.Construction, swebok.CompFoundations, swebok.ModelsAndMethods,
         
         ccdsc.BDS, ccdsc.PDA,
@@ -640,10 +817,14 @@ addUnits([
       mappings: [ 
         cbok.old.Societal.level(1), cbok.old.Communication.level(3), cbok.old.Fundamentals.level(2), cbok.old.Understanding.level(1), 
         cbok.old.Data.level(2), cbok.old.Networking.level(3), cbok.old.Programming.level(3), cbok.old.Cybersecurity.level(3),
+
+        cbok.v3_2.Impacts.level(1), cbok.v3_2.Communication.level(3), cbok.v3_2.Fundamentals.level(2), cbok.old.Data.level(2), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Cybersecurity.level(3), cbok.v3_2.Depth.level(3),
         
         swebok.CompFoundations, swebok.Construction,
         
         ccdsc.CCF, ccdsc.DP, edison.SEC,
+
+        cybok.SS, cybok.IS,
 
         idverify.ProctoredExam, idverify.PersonalisedAssessment
       ],
@@ -671,6 +852,8 @@ addUnits([
       prereq: [ "COSC230" ],
       mappings: [ 
         cbok.old.Data.level(3), cbok.old.Programming.level(3), cbok.old.Fundamentals.level(2), cbok.old.Systems.level(2), cbok.old.ProblemSolving.level(2),
+        cbok.v3_2.Data.level(3), cbok.v3_2.Computing.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Impacts.level(2), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
         swebok.Construction,
         
         ccdsc.AI, ccdsc.ML, ccdsc.PDA,
@@ -678,6 +861,10 @@ addUnits([
         edison.PA,
         edison.DM,
         edison.SDMA,
+
+        cybok.AD, cybok.HORA,
+
+        cs2023ai.FundamentalIssues, cs2023ai.Planning, cs2023ai.Robotics, cs2023ai.FKRR, cs2023ai.Search, cs2023ai.MachineLearning, cs2023ai.Logical, cs2023ai.Perception, cs2023ai.Agents,
 
         idverify.ProctoredExam 
       ],
@@ -690,6 +877,7 @@ addUnits([
       prereq: [ "COSC110", choose(2, "COSC210", "COSC220", "COSC230", "COSC240", "COSC250", "COSC260", "STAT210") ],
       mappings: [ 
         cbok.old.Data.level(3), cbok.old.Programming.level(3), cbok.old.Fundamentals.level(2), cbok.old.Systems.level(2), cbok.old.ProblemSolving.level(2),
+        
         swebok.Construction,
         ccdsc.AI, ccdsc.ML, ccdsc.PDA,
         edison.ML,
@@ -707,6 +895,8 @@ addUnits([
       prereq: [ "COSC120", "COSC260" ],
       mappings: [ 
         cbok.old.Communication.level(2), cbok.old.Networking.level(3), cbok.old.Programming.level(3), cbok.old.HumanFactors.level(2), cbok.old.Systems.level(2), cbok.old.ServiceManagement.level(2), cbok.old.Cybersecurity.level(2),
+        cbok.v3_2.Application.level(2), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Computing.level(3), cbok.v3_2.Governance.level(2), cbok.v3_2.Cybersecurity.level(2), cbok.v3_2.Depth.level(3),
+
         swebok.Construction, swebok.Design, swebok.Testing, swebok.Requirements,
         ccdsc.CCF, ccdsc.AP, ccdsc.PDA,
         edison.BDI, // NoSQL (Mongo)
@@ -736,6 +926,8 @@ addUnits([
       prereq: [ cp(72), "COSC220" ],
       mappings: [ 
         cbok.old.Communication.level(3), cbok.old.Societal.level(3), cbok.old.HumanFactors.level(3), cbok.old.Systems.level(3),
+        cbok.v3_2.Communication.level(3), cbok.v3_2.Impacts.level(3), cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Application.level(3), cbok.v3_2.Ethics.level(3), cbok.v3_2.Projects.level(2), cbok.v3_2.Depth.level(3),
+
         swebok.Requirements, swebok.Design, swebok.ProfPractice, 
         ccdsc.AP, ccdsc.PR,
         idverify.Project, idverify.Video, idverify.TurnItIn 
@@ -763,6 +955,9 @@ addUnits([
       prereq: [ cp(48) ],
       mappings: [ 
         cbok.old.Societal.level(2), cbok.old.Data.level(2), cbok.old.Systems.level(3), cbok.old.ProjectManagement.level(1), cbok.old.ServiceManagement.level(2), cbok.old.Networking.level(2), cbok.old.HumanFactors.level(2), cbok.old.Cybersecurity.level(1),
+
+        cbok.v3_2.Impacts.level(2), cbok.v3_2.Data.level(2), cbok.v3_2.Application.level(3), cbok.v3_2.Projects.level(1), cbok.v3_2.Governance.level(2), cbok.v3_2.Infrastructure.level(2), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Cybersecurity.level(1), cbok.v3_2.Depth.level(3),
+
         swebok.Economics, swebok.Maintenance, swebok.Quality,
         ccdsc.AP, ccdsc.PR, ccdsc.DG, ccdsc.DP,
         edison.BAF,
@@ -770,6 +965,9 @@ addUnits([
         edison.IS,
         edison.DMORG,
         edison.DGOV,
+
+        cybok.HORA, cybok.SAPS, cybok.IS,
+
         idverify.PersonalisedAssessment, idverify.TurnItIn 
       ]
     },
@@ -798,6 +996,10 @@ addUnits([
       prereq: [ choose(1, "MTHS120", "MTHS130"), choose(1, "COSC230", "AMTH250", "SCI210", "STAT330") ],
       mappings: [ 
         cbok.old.Data.level(3), cbok.old.Programming.level(2), cbok.old.ProblemSolving.level(2),
+
+        cbok.v3_2.Data.level(3), cbok.v3_2.Computing.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
+
         swebok.Construction, swebok.MathFoundations,
         ccdsc.ML, ccdsc.PDA,
         edison.ML,
@@ -805,6 +1007,9 @@ addUnits([
         edison.PA,
         edison.SMDA,
         edison.DSAPPD,
+
+        cs2023ai.MachineLearning, cs2023ai.FKRR, cs2023ai.Probabilistic, cs2023ai.FundamentalIssues, cs2023ai.Search,
+
         idverify.Project, idverify.TurnItIn
       ],
       tags: ["Advanced"],
@@ -953,7 +1158,18 @@ addUnits([
       name: "Fundamentals of Cybersecurity and Privacy",
       prereq: [],
       mappings: [ 
-        cbok.old.Ethics.level(1), cbok.old.Cybersecurity.level(1), cbok.old.ProfExpectations.level(1), cbok.old.Understanding.level(1), cbok.old.Societal.level(1), cbok.old.Data.level(1), cbok.old.Governance.level(1), cbok.old.ServiceManagement.level(1),
+        cbok.old.Ethics.level(2), cbok.old.Cybersecurity.level(2), cbok.old.ProfExpectations.level(1), cbok.old.Understanding.level(1), cbok.old.Societal.level(2), cbok.old.Data.level(1), cbok.old.Governance.level(1), cbok.old.ServiceManagement.level(1),
+
+        cbok.v3_2.Ethics.level(2), cbok.v3_2.Cybersecurity.level(2), cbok.v3_2.Practitioner.level(1), cbok.v3_2.Fundamentals.level(1), cbok.v3_2.Impacts.level(2), cbok.v3_2.Data.level(1), cbok.v3_2.Governance.level(1), cbok.v3_2.Depth.level(1),
+
+
+        cybok.HORA, cybok.AD, cybok.SAPS, cybok.IS,
+
+        swebok.ProfPractice, swebok.Quality,
+
+        cs2023ai.Applications,
+
+        
       ]
     },
 
@@ -961,48 +1177,105 @@ addUnits([
       code: "COSC481",
       name: "Cryptography",
       prereq: ["AMTH140", "COSC230"],
-      cbok: [],
-      swebok: [],
-      sfia: [],
-      dsbok: [],
+      mappings: [
+        cbok.old.Cybersecurity.level(3),
+        cbok.old.Fundamentals.level(3),
+        cbok.old.Data.level(3),
+        cbok.old.Networking.level(3),
+
+        cbok.v3_2.Cybersecurity.level(3),
+        cbok.v3_2.Fundamentals.level(3),
+        cbok.v3_2.Data.level(3),
+        cbok.v3_2.Infrastructure.level(3),
+        cbok.v3_2.Depth.level(3),  
+
+        cybok.SS,
+
+
+      ],
       tags: [ "Advanced" ],
-      other: []
     },
 
     {
       code: "COSC482",
       name: "Ethical Hacking",
       prereq: ["COSC220", "COSC240"],
-      cbok: [],
-      swebok: [],
-      sfia: [],
-      dsbok: [],
+      mappings: [
+        cbok.old.Cybersecurity.level(3),
+        cbok.old.ServiceManagement.level(3),
+        cbok.old.Systems.level(3),
+        cbok.old.Governance.level(3),
+        cbok.old.Networking.level(3),
+
+
+        cbok.v3_2.Cybersecurity.level(3),
+        cbok.v3_2.Governance.level(3),
+        cbok.v3_2.Data.level(3),
+        cbok.v3_2.Infrastructure.level(3),
+        cbok.v3_2.Depth.level(3),  
+        
+
+
+        cybok.AD,  cybok.SAPS, cybok.IS,
+
+
+
+      ],
       tags: [ "Advanced" ],
-      other: []
     },
 
     {
       code: "COSC483",
       name: "Cybersecurity Risk and Project Management",
       prereq: ["COSC220", "COSC240", "COSC340"],
-      cbok: [],
-      swebok: [],
-      sfia: [],
-      dsbok: [],
+      mappings: [
+        cbok.old.Cybersecurity.level(3),
+        cbok.old.ProjectManagement.level(3),
+        cbok.old.Governance.level(3),
+        cbok.old.Systems.level(3),
+        cbok.old.Societal.level(3),
+        cbok.old.Ethics.level(3),
+        cbok.old.Understanding.level(3),
+
+        cbok.v3_2.Cybersecurity.level(3),
+        cbok.v3_2.Governance.level(3),
+        cbok.v3_2.Data.level(3),
+        cbok.v3_2.Infrastructure.level(3),
+        cbok.v3_2.Projects.level(3),
+        cbok.v3_2.Practitioner.level(3),
+        cbok.v3_2.Depth.level(3),  
+
+        cybok.HORA, cybok.SAPS, cybok.IS, cybok.SS, 
+
+
+      ],
       tags: [ "Advanced" ],
-      other: []
     },
   
     {
       code: "COSC484",
       name: "Cloud Security",
       prereq: ["COSC220", "COSC240", "COSC340"],
-      cbok: [],
-      swebok: [],
-      sfia: [],
-      dsbok: [],
+      mappings: [
+        cbok.old.Cybersecurity.level(3),
+        cbok.old.ServiceManagement.level(3),
+
+        cbok.v3_2.Cybersecurity.level(3),
+        cbok.v3_2.Governance.level(3),
+        cbok.v3_2.Infrastructure.level(3),
+        cbok.v3_2.Depth.level(3),  
+
+        cybok.HORA, cybok.IS, cybok.SAPS, cybok.SS,
+
+
+
+
+        swebok.ConfigManagement, swebok.Maintenance, swebok.Quality, swebok.EngManagement
+
+
+
+      ],
       tags: [ "Advanced" ],
-      other: []
     },
 
     {
@@ -1020,25 +1293,33 @@ addUnits([
     {
       code: "COSC331",
       name: "Machine Learning with Big Data",
-      prereq: [ ],
-      cbok: [],
-      swebok: [],
-      sfia: [],
-      dsbok: [],
+      prereq: [ or("COSC110", "COSC102"), "MTHS120", choose(1, "COSC210", "COSC220", "COSC250 ")],
+      mappings: [
+        cbok.old.Programming.level(3), cbok.old.Data.level(3), cbok.old.Networking.level(3), cbok.old.ProblemSolving.level(2), cbok.old.Fundamentals.level(2),
+
+        cbok.v3_2.Computing.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
+        cs2023ai.MachineLearning, cs2023ai.FundamentalIssues, cs2023ai.FKRR, cs2023ai.Applications,
+
+
+      ],
       tags: [ "Advanced" ],
-      other: []
+
     },
 
     {
       code: "COSC351",
       name: "Deep Learning",
-      prereq: [ ],
-      cbok: [],
-      swebok: [],
-      sfia: [],
-      dsbok: [],
+      prereq: [ or("COSC102", "COSC110"), "MTHS120", choose(1, "COSC210", "COSC220", "COSC230", "COSC240")],
+      mappings: [
+        cbok.old.Programming.level(3), cbok.old.Data.level(3), cbok.old.Networking.level(3), cbok.old.ProblemSolving.level(2), cbok.old.Fundamentals.level(2),
+        cbok.v3_2.Computing.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
+        cs2023ai.NLP, cs2023ai.Perception, cs2023ai.Probabilistic, cs2023ai.MachineLearning, cs2023ai.FKRR
+
+
+      ],
       tags: [ "Advanced" ],
-      other: []
     },
 
 
@@ -1046,10 +1327,15 @@ addUnits([
       code: "COSC352",
       name: "Reinforcement Learning",
       prereq: [ ],
-      cbok: [],
-      swebok: [],
-      sfia: [],
-      dsbok: [],
+      mappings: [
+
+        cbok.old.Programming.level(3), cbok.old.Data.level(3), cbok.old.ProblemSolving.level(2), cbok.old.Fundamentals.level(2),
+        cbok.v3_2.Computing.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
+        cs2023ai.FundamentalIssues, cs2023ai.Probabilistic, cs2023ai.MachineLearning, cs2023ai.FKRR
+
+
+      ],
       tags: [ "Advanced" ],
       other: []
     },

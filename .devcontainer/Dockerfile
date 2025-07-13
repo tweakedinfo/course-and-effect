@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim-bullseye
+FROM eclipse-temurin:21-jdk-jammy
 
 # Install some basic development utilities
 RUN apt-get update && apt-get install -y \ 
@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
   python3 \
   zip \
   && rm -rf /var/lib/apt/lists/* \
-  && curl -fsSL https://deb.nodesource.com/setup_17.x | bash \
+  && curl -fsSL https://deb.nodesource.com/setup_20.x | bash \
   && apt-get install -y nodejs \
   && npm install -g yarn \
   && rm -rf /var/lib/apt/lists/* 
