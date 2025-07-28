@@ -114,7 +114,7 @@ addCourses([
     },
     pages: [
       // cbok.old.page, 
-      cbok.v3_2.page, cybok.page
+      cbok.v3_2.page, cybok.page, effects.page
     ]
   },
 
@@ -163,7 +163,7 @@ addCourses([
     },
     pages: [
       // cbok.old.page, 
-      cbok.v3_2.page, cybok.page
+      cbok.v3_2.page, cybok.page, effects.page
     ]
   },
 
@@ -211,7 +211,7 @@ addCourses([
     },
     pages: [
       // cbok.old.page, 
-      cbok.v3_2.page, swebok.page
+      cbok.v3_2.page, swebok.page, effects.page
     ]
   },
 
@@ -251,7 +251,7 @@ addCourses([
     },
     pages: [
       // cbok.old.page, 
-      cbok.v3_2.page, edison.page, ccdsc.page
+      cbok.v3_2.page, edison.page, ccdsc.page, effects.page
     ]
 
   },
@@ -389,7 +389,7 @@ addCourses([
 
     },
     pages: [
-      cbok.v3_2.page, cybok.page, swebok.page, ccdsc.page, edison.page, cs2023ai.page
+      cbok.v3_2.page, cybok.page, swebok.page, ccdsc.page, edison.page, cs2023ai.page, effects.page
     ],
 
   },
