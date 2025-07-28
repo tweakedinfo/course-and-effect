@@ -108,6 +108,9 @@ addUnits([
       mappings: [ 
         swebok.MathFoundations,
         idverify.ProctoredExam 
+      ], 
+      assessments: [
+        proctoredExam("Final examination", 60, true)
       ]
     },
 
@@ -120,6 +123,9 @@ addUnits([
         swebok.MathFoundations,
         ccdsc.AP, edison.SMDA,
         idverify.ProctoredExam 
+      ], 
+      assessments: [
+        proctoredExam("Final examination", 60, true)
       ]
     },
 
@@ -131,6 +137,9 @@ addUnits([
         swebok.MathFoundations,
         ccdsc.AP, edison.SMDA,
         idverify.ProctoredExam 
+      ], 
+      assessments: [
+        proctoredExam("Final examination", 60, true)
       ]
     },
 
@@ -162,7 +171,10 @@ addUnits([
         cybok.SS,
 
 
-      ],
+      ],  
+      assessments: [
+          proctoredExam("Final examination", 50, true)
+      ]
     },
 
 
@@ -268,7 +280,10 @@ addUnits([
 
         cs2023ai.Probabilistic, cs2023ai.FKRR, cs2023ai.Agents,
 
-        idverify.PersonalisedAssessment, idverify.TurnItIn ]
+        idverify.PersonalisedAssessment, idverify.TurnItIn ], 
+        assessments: [
+          proctoredExam("Final examination", 60, true)
+        ]
     },
 
     {
@@ -601,6 +616,9 @@ addUnits([
         cybok.SS, cybok.IS,
 
         idverify.ProctoredExam, idverify.PersonalisedAssessment 
+      ], 
+      assessments: [
+        proctoredExam("Final examination", 40, true)
       ]
     },
 
@@ -676,7 +694,10 @@ addUnits([
       
         idverify.ProctoredExam, idverify.GroupWork, idverify.TurnItIn, idverify.Video,
       ],
-      tags: ["Advanced"],
+      tags: ["Advanced"],  
+      assessments: [
+          proctoredExam("Final examination", 50, true)
+      ]
       
     },
 
@@ -828,7 +849,10 @@ addUnits([
 
         idverify.ProctoredExam, idverify.PersonalisedAssessment
       ],
-      tags: ["Advanced"], 
+      tags: ["Advanced"],  
+      assessments: [
+          proctoredExam("Final examination", 40, true)
+      ]
     },
 
     {
@@ -842,7 +866,10 @@ addUnits([
         edison.SEC,
         idverify.ProctoredExam, idverify.PersonalisedAssessment 
       ],
-      tags: ["Advanced"],
+      tags: ["Advanced"],  
+      assessments: [
+          proctoredExam("Final examination", 40, true)
+      ]
     },
 
 
@@ -969,6 +996,9 @@ addUnits([
         cybok.HORA, cybok.SAPS, cybok.IS,
 
         idverify.PersonalisedAssessment, idverify.TurnItIn 
+      ],  
+      assessments: [
+          proctoredExam("Final examination", 50, true)
       ]
     },
 
@@ -1012,7 +1042,10 @@ addUnits([
 
         idverify.Project, idverify.TurnItIn
       ],
-      tags: ["Advanced"],
+      tags: ["Advanced"],  
+      assessments: [
+          proctoredExam("Final examination", 55, true)
+      ]
     },
 
     {
@@ -1170,6 +1203,9 @@ addUnits([
         cs2023ai.Applications,
 
         
+      ],  
+      assessments: [
+          proctoredExam("Final examination", 40, true)
       ]
     },
 
@@ -1193,7 +1229,10 @@ addUnits([
 
 
       ],
-      tags: [ "Advanced" ],
+      tags: [ "Advanced" ],  
+      assessments: [
+          proctoredExam("Final examination", 40, true)
+      ]
     },
 
     {
@@ -1221,7 +1260,10 @@ addUnits([
 
 
       ],
-      tags: [ "Advanced" ],
+      tags: [ "Advanced" ],  
+      assessments: [
+          proctoredExam("Final examination", 40, true)
+      ]
     },
 
     {
@@ -1249,7 +1291,10 @@ addUnits([
 
 
       ],
-      tags: [ "Advanced" ],
+      tags: [ "Advanced" ],  
+      assessments: [
+          proctoredExam("Final examination", 40, true)
+      ]
     },
   
     {
@@ -1275,7 +1320,10 @@ addUnits([
 
 
       ],
-      tags: [ "Advanced" ],
+      tags: [ "Advanced" ],  
+      assessments: [
+          proctoredExam("Final examination", 40, true)
+      ]
     },
 
     {
@@ -1319,7 +1367,10 @@ addUnits([
 
 
       ],
-      tags: [ "Advanced" ],
+      tags: [ "Advanced" ],  
+      assessments: [
+          proctoredExam("Open book final examination", 30, true)
+      ]
     },
 
 
