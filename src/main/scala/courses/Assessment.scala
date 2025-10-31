@@ -166,6 +166,9 @@ case class Assessment(
   name:String,
   LOs:Seq[SubjectLearningOutcome] = Seq.empty,
   passContribution:Seq[PassContribution] = Seq.empty,
+
+  learningOutcomes:Seq[Int] = Seq.empty, 
+
   integrityAssurance:Seq[IntegrityAssurance] = Seq.empty
 ) extends GradeCalculation[?] {
 
@@ -187,13 +190,22 @@ import scala.scalajs.js
 import js.annotation.{JSExport, JSExportAll, JSExportTopLevel}
 import js.JSConverters.*
 
+import scala.collection.mutable
+
 @JSExportTopLevel("proctoredExam")
-def proctoredExam(n:String, weight:Double, mustPass:Boolean = false) = Assessment(
+def proctoredExam(n:String, weight:Double, los:mutable.Buffer[Int] = mutable.Buffer.empty, mustPass:Boolean = false) = Assessment(
   n, 
   passContribution = if mustPass then Seq(PassContribution.Weighted(weight), PassContribution.Hurdle) else Seq(PassContribution.Weighted(weight)),
+  learningOutcomes = los.toSeq,
   integrityAssurance = Seq(LearningEvidence.ProctorReport -> EvidenceRequirement.Investigated)
 ) 
 
+@JSExportTopLevel("vivaVoce")
+def vivaVoce(n:String, weight:Double, mustPass:Boolean = false) = Assessment(
+  n, 
+  passContribution = if mustPass then Seq(PassContribution.Weighted(weight), PassContribution.Hurdle) else Seq(PassContribution.Weighted(weight)),
+  integrityAssurance = Seq(LearningEvidence.ObserverReport -> EvidenceRequirement.Weighted(1))
+) 
 
 
 @JSExportTopLevel("assessment")

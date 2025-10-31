@@ -29,7 +29,8 @@ case class Course(
   structure: Plan,
   plans: Seq[(String, Plan)],
   pages: Seq[CoursePage] = Seq.empty, 
-  learningOutcomes: Seq[CourseLearningOutcome] = Seq.empty
+  learningOutcomes: Seq[CourseLearningOutcome] = Seq.empty, 
+  cloToUlo: Map[Int, (String, Int)] = Map.empty
 )
 
 
