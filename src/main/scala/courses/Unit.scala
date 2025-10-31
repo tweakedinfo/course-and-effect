@@ -98,6 +98,7 @@ case class Subject(
  mappings:Set[Any], 
  prereq: Seq[PrereqElement],
  tags: Seq[String] = Seq.empty,
+ learningOutcomes: Seq[String] = Seq.empty,
  assessments: Seq[Assessment] = Seq.empty
 ) {
 
@@ -118,8 +119,6 @@ def addUnit(config:js.Dynamic) = {
     import js.JSConverters._
     import js.DynamicImplicits.truthValue
 
-    
-
     val s = Subject(
       code = config.code.asInstanceOf[String],
       name = config.name.asInstanceOf[String],
@@ -130,6 +129,8 @@ def addUnit(config:js.Dynamic) = {
         case p:PrereqElement => p
       }).toSeq,
       tags = if config.tags then config.tags.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
+
+      learningOutcomes = if config.learningOutcomes then config.tags.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
 
       assessments = if config.assessments then config.assessments.asInstanceOf[js.Array[Assessment]].toSeq else Seq.empty,
     )
