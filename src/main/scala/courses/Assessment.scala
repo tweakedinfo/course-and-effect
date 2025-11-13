@@ -193,10 +193,10 @@ import js.JSConverters.*
 import scala.collection.mutable
 
 @JSExportTopLevel("proctoredExam")
-def proctoredExam(n:String, weight:Double, los:mutable.Buffer[Int] = mutable.Buffer.empty, mustPass:Boolean = false) = Assessment(
+def proctoredExam(n:String, weight:Double, los:js.Array[js.Any] = js.Array(), mustPass:Boolean = false) = Assessment(
   n, 
   passContribution = if mustPass then Seq(PassContribution.Weighted(weight), PassContribution.Hurdle) else Seq(PassContribution.Weighted(weight)),
-  learningOutcomes = los.toSeq,
+  learningOutcomes = try los.toSeq.map(_.asInstanceOf[Int]) catch case _ => Seq.empty,
   integrityAssurance = Seq(LearningEvidence.ProctorReport -> EvidenceRequirement.Investigated)
 ) 
 
