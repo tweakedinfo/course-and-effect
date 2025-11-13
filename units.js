@@ -2,7 +2,7 @@
 
 console.log("Loading units")
 
-console.log(proctoredExam("Final Examination", 35, true))
+console.log(proctoredExam("Final Examination", 35, [], true))
 
 addUnits([
     {
@@ -36,7 +36,7 @@ addUnits([
 
       ],
       assessments: [
-        proctoredExam("Final Examination", 60, true)
+        proctoredExam("Final Examination", 60, [], true)
       ]
     },
 
@@ -110,7 +110,7 @@ addUnits([
         idverify.ProctoredExam 
       ], 
       assessments: [
-        proctoredExam("Final examination", 60, true)
+        proctoredExam("Final examination", 60, [], true)
       ]
     },
 
@@ -125,7 +125,7 @@ addUnits([
         idverify.ProctoredExam 
       ], 
       assessments: [
-        proctoredExam("Final examination", 60, true)
+        proctoredExam("Final examination", 60, [], true)
       ]
     },
 
@@ -139,7 +139,7 @@ addUnits([
         idverify.ProctoredExam 
       ], 
       assessments: [
-        proctoredExam("Final examination", 60, true)
+        proctoredExam("Final examination", 60, [], true)
       ]
     },
 
@@ -173,7 +173,7 @@ addUnits([
 
       ],  
       assessments: [
-          proctoredExam("Final examination", 50, true)
+          proctoredExam("Final examination", 50, [], true)
       ]
     },
 
@@ -282,7 +282,7 @@ addUnits([
 
         idverify.PersonalisedAssessment, idverify.TurnItIn ], 
         assessments: [
-          proctoredExam("Final examination", 60, true)
+          proctoredExam("Final examination", 60, [], true)
         ]
     },
 
@@ -479,7 +479,7 @@ addUnits([
         idverify.ProctoredExam, idverify.TurnItIn, idverify.PersonalisedAssessment 
       ],
       assessments: [
-        proctoredExam("Final Examination", 35, true)
+        proctoredExam("Final Examination", 35, [], true)
       ]
     },
 
@@ -494,7 +494,7 @@ addUnits([
         ccdsc.PDA, ccdsc.CCF, ccdsc.SDM, 
         idverify.Video ],
       assessments: [
-        proctoredExam("Final Examination", 40, true)
+        proctoredExam("Final Examination", 40, [], true)
       ]
     },
 
@@ -597,7 +597,7 @@ addUnits([
       ],
       tags: ["adv?"],
       assessments: [
-        proctoredExam("Final Examination", 60, true)
+        proctoredExam("Final Examination", 60, [], true)
       ]
     },
 
@@ -618,7 +618,7 @@ addUnits([
         idverify.ProctoredExam, idverify.PersonalisedAssessment 
       ], 
       assessments: [
-        proctoredExam("Final examination", 40, true)
+        proctoredExam("Final examination", 40, [], true)
       ]
     },
 
@@ -696,7 +696,7 @@ addUnits([
       ],
       tags: ["Advanced"],  
       assessments: [
-          proctoredExam("Final examination", 50, true)
+          proctoredExam("Final examination", 50, [], true)
       ]
       
     },
@@ -851,7 +851,7 @@ addUnits([
       ],
       tags: ["Advanced"],  
       assessments: [
-          proctoredExam("Final examination", 40, true)
+          proctoredExam("Final examination", 40, [], true)
       ]
     },
 
@@ -868,7 +868,7 @@ addUnits([
       ],
       tags: ["Advanced"],  
       assessments: [
-          proctoredExam("Final examination", 40, true)
+          proctoredExam("Final examination", 40, [], true)
       ]
     },
 
@@ -998,7 +998,7 @@ addUnits([
         idverify.PersonalisedAssessment, idverify.TurnItIn 
       ],  
       assessments: [
-          proctoredExam("Final examination", 50, true)
+          proctoredExam("Final examination", 50, [], true)
       ]
     },
 
@@ -1044,7 +1044,7 @@ addUnits([
       ],
       tags: ["Advanced"],  
       assessments: [
-          proctoredExam("Final examination", 55, true)
+          proctoredExam("Final examination", 55, [], true)
       ]
     },
 
@@ -1205,7 +1205,7 @@ addUnits([
         
       ],  
       assessments: [
-          proctoredExam("Final examination", 40, true)
+          proctoredExam("Final examination", 40, [], true)
       ]
     },
 
@@ -1231,7 +1231,7 @@ addUnits([
       ],
       tags: [ "Advanced" ],  
       assessments: [
-          proctoredExam("Final examination", 40, true)
+          proctoredExam("Final examination", 40, [], true)
       ]
     },
 
@@ -1262,7 +1262,7 @@ addUnits([
       ],
       tags: [ "Advanced" ],  
       assessments: [
-          proctoredExam("Final examination", 40, true)
+          proctoredExam("Final examination", 40, [], true)
       ]
     },
 
@@ -1293,7 +1293,7 @@ addUnits([
       ],
       tags: [ "Advanced" ],  
       assessments: [
-          proctoredExam("Final examination", 40, true)
+          proctoredExam("Final examination", 40, [], true)
       ]
     },
   
@@ -1322,7 +1322,7 @@ addUnits([
       ],
       tags: [ "Advanced" ],  
       assessments: [
-          proctoredExam("Final examination", 40, true)
+          proctoredExam("Final examination", 40, [], true)
       ]
     },
 
@@ -1369,7 +1369,7 @@ addUnits([
       ],
       tags: [ "Advanced" ],  
       assessments: [
-          proctoredExam("Open book final examination", 30, true)
+          proctoredExam("Open book final examination", 30, [], true)
       ]
     },
 
