@@ -130,7 +130,7 @@ def addUnit(config:js.Dynamic) = {
       }).toSeq,
       tags = if config.tags then config.tags.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
 
-      learningOutcomes = if config.learningOutcomes then config.tags.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
+      learningOutcomes = if config.outcomes then config.outcomes.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
 
       assessments = if config.assessments then config.assessments.asInstanceOf[js.Array[Assessment]].toSeq else Seq.empty,
     )

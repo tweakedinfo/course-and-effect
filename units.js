@@ -436,13 +436,22 @@ addUnits([
 
         swebok.MathFoundations, swebok.CompFoundations, swebok.Construction, swebok.ProfPractice,
         ccdsc.CCF, ccdsc.AP, ccdsc.PDA, ccdsc.PR,
-        idverify.GroupWork, idverify.Video ]
+        idverify.GroupWork, idverify.Video ],
+        outcomes: [
+          "explain how data and information is represented within a computer system and how it is manipulated to solve problems in a range of disciplines",
+          "solve problems and design software solutions using a high-level programming language and a range of technologies, protocols and algorithms",
+          "apply basic collaborative software development practices to work effectively with team members on small-scale software development projects",
+          "understand basic interaction design principles and apply these to the development of interactive software",
+          "demonstrate effectively written and oral communication skills to convey information, approaches and design decisions to a range of audiences"
+        ]
+      
     },
 
     {
       code: "COSC102",
       name: "Data Science Studio 1",
       prereq: [ choose(2, "COSC110", "STAT110") ],
+
       mappings: [  
         cbok.old.Programming.level(2), cbok.old.Teamwork.level(2), cbok.old.Communication.level(2), cbok.old.Data.level(1), cbok.old.ProblemSolving.level(1),
 
@@ -478,6 +487,18 @@ addUnits([
 
         idverify.ProctoredExam, idverify.TurnItIn, idverify.PersonalisedAssessment 
       ],
+
+      outcomes: [
+        "design, develop, test, and deliver computer programs to solve complex problems, both individually and as part of a collaborative development team;",
+        "apply modern software engineering tools, skills, and practices to create, analyse, and evolve software systems;",
+        "investigate and analyse new application areas, including understanding the needs of users and stakeholders, in order to design creative and appropriate solutions;",
+        "apply abstraction, mathematics, and theoretical principles to the design of computer programs;",
+        "communicate and collaborate effectively with others;",
+        "apply appropriate methods to manage and monitor software development projects;",
+        "apply ethical considerations, professionalism, and reflection to software development, with due consideration for impacts on others and society; and",
+        "demonstrate well-developed knowledge and critical analytical skills in at least one disciplinary area, with an ability to extend knowledge and analytical skills into other disciplinary areas."
+      ],
+
       assessments: [
         proctoredExam("Final Examination", 35, [], true)
       ]
@@ -495,7 +516,13 @@ addUnits([
         idverify.Video ],
       assessments: [
         proctoredExam("Final Examination", 40, [], true)
-      ]
+      ],
+
+      outcomes: [
+        "explain object oriented programming concepts including classes, objects, encapsulation, inheritance, and polymorphism",
+        "apply object oriented design principles to algorithm design and analysis",
+        "develop computer programs using Java, which is an object oriented programming language"
+      ],
     },
 
     {
@@ -1206,6 +1233,13 @@ addUnits([
       ],  
       assessments: [
           proctoredExam("Final examination", 40, [], true)
+      ],
+
+      outcomes: [
+        "understand the cybersecurity concepts and how they interrelate with each other, and analyse security breaches to identify services, mechanisms, threats and vulnerabilities that play a part in the breach",
+        "understand, interpret and discuss legal, ethical, cultural and privacy theories, issues and/or guidelines relevant to IT and cybersecurity, including AU Privacy Principles, and their impact on individuals, professionals and organisations in the modern world",
+        "understand cybersecurity threats faced by individuals and suggest strategies to alleviate these threats",
+        "understand cybersecurity threats and risks faced by organisations and conceptually design solutions to protect data and other resources"
       ]
     },
 
