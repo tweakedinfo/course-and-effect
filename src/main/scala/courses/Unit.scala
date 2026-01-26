@@ -66,7 +66,7 @@ extension (els:Seq[PrereqElement]) {
   def stringify:String = 
     els.map({
       case s:PrereqElement.unit => s.code
-      case PrereqElement.or(a, b) => s"($a or $b)"
+      case PrereqElement.or(a, b) => s"(${a.code} or ${b.code})"
       case PrereqElement.choose((from, to), units) => s"($from-$to from ${units.map(_.code).mkString(", ")})"
       case PrereqElement.choose(num, units) => s"($num from ${units.map(_.code).mkString(", ")})"
       case PrereqElement.cp(num) => s"${num}cp"

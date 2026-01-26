@@ -591,7 +591,7 @@ addUnits([
         cybok.SS, cybok.SAPS,
 
         idverify.TurnItIn, idverify.GroupWork, idverify.Project, idverify.DataTrails, idverify.Video ],
-      tags: [ "adv?" ], 
+      tags: [ "Advanced" ], 
       assessments: [
         assessment({
           name: "Collaborative project",
@@ -1199,6 +1199,18 @@ addUnits([
     },
 
     {
+      code: "Advanced ICT Elective",
+      name: "Advanced ICT Elective",
+      prereq: [],
+      cbok: [],
+      swebok: [],
+      sfia: [],
+      dsbok: [],
+      tags: ["Advanced"],
+      other: []
+    },
+
+    {
       code: "Prescribed 500-level",
       name: "Advanced ICT Elective",
       prereq: [],
@@ -1323,9 +1335,9 @@ addUnits([
         cbok.v3_2.Infrastructure.level(3),
         cbok.v3_2.Depth.level(3),  
         
-
-
         cybok.AD,  cybok.SAPS, cybok.IS,
+
+        swebok.Quality, swebok.Testing
 
 
 
@@ -1358,6 +1370,8 @@ addUnits([
         cbok.v3_2.Depth.level(3),  
 
         cybok.HORA, cybok.SAPS, cybok.IS, cybok.SS, 
+
+        swebok.Process, swebok.ProfPractice, swebok.EngManagement
 
 
       ],
@@ -1570,5 +1584,81 @@ addUnits([
       ],
       tags: [ "Advanced", "Capstone" ],
     },
+
+    {
+      code: "PHYS311",
+      name: "Digital Electronic Systems",
+      prereq: [ or("AMTH140", "ICT101") ],
+    },
+
+    {
+      code: "ICT363",
+      name: "Embedded Systems and Sensors",
+      prereq: [ or("ICT101", "PHYS311"), choose(1, "COSC230", "COSC240", "COSC250")],
+      mappings: [
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Data.level(3),
+        edison.MODSIM, 
+        swebok.Construction, swebok.CompFoundations, swebok.EngFoundations
+      ],
+      tags: [ "Advanced" ],
+    },
+
+    {
+      code: "COSC361",
+      name: "Internet of Things",
+      prereq: [ or("ICT101", "AMTH140"), or("COSC220", "COSC260")],
+      mappings: [
+        cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Cybersecurity.level(3), 
+        edison.DM, edison.CCT,
+        cybok.SAPS, cybok.IS,
+        swebok.Construction, swebok.Design, swebok.Quality
+
+      ],
+      tags: [ "Advanced" ],
+    },
+
+
+    {
+      code: "IoT Group 2",
+      name: "Group 2 ICT Unit",
+      prereq: [],
+      tags: [ "Advanced" ],
+    },
+
+    {
+      code: "IS & Cybersecurity Group 1",
+      name: "Group 1 ICT Unit",
+      prereq: [],
+      tags: [  ],
+    },
+
+    {
+      code: "IS & Cybersecurity Group 2",
+      name: "Group 2 ICT Unit",
+      prereq: [],
+      tags: [ "Advanced" ],
+    },
+
+    {
+      code: "Software Dev Group 1",
+      name: "Group 1 ICT Unit",
+      prereq: [],
+      tags: [ ],
+    },
+
+    {
+      code: "Adv Software Dev Group 2",
+      name: "Group 2 ICT Unit",
+      prereq: [],
+      tags: [ "Advanced" ],
+    },
+
+    {
+      code: "Software Dev Group 2",
+      name: "Group 2 ICT Unit",
+      prereq: [],
+      tags: [ ],
+    },
+
 
   ])
