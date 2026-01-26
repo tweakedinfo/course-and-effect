@@ -201,7 +201,7 @@ def proctoredExam(n:String, weight:Double, los:js.Array[js.Any] = js.Array(), mu
 ) 
 
 @JSExportTopLevel("vivaVoce")
-def vivaVoce(n:String, weight:Double, mustPass:Boolean = false) = Assessment(
+def vivaVoce(n:String, weight:Double, los:mutable.Buffer[Int] = mutable.Buffer.empty, mustPass:Boolean = false) = Assessment(
   n, 
   passContribution = if mustPass then Seq(PassContribution.Weighted(weight), PassContribution.Hurdle) else Seq(PassContribution.Weighted(weight)),
   integrityAssurance = Seq(LearningEvidence.ObserverReport -> EvidenceRequirement.Weighted(1))
@@ -228,6 +228,7 @@ def customAssessment(config:js.Dynamic):Assessment =
     val a = Assessment(
       name = config.name.asInstanceOf[String],
       passContribution = if config.grade then config.grade.asInstanceOf[js.Array[PassContribution]].toSeq else Seq.empty,
+      learningOutcomes = if config.los then config.los.asInstanceOf[js.Array[Int]].toSeq else Seq.empty,
       integrityAssurance = {
         if config.ev then 
         for 

@@ -335,8 +335,9 @@ addUnits([
       prereq: [ "STAT100", "candidature in MDatSci or pg award" ],
       mappings: [ 
         cbok.old.Data.level(3),
-        cbok.v3_2.Data.level(3),
+        cbok.v3_2.Data.level(3), cbok.v3_2.Depth.level(2),
         ccdsc.AP, ccdsc.DM, ccdsc.ML, 
+        cs2023ai.Search, cs2023ai.FKRR, cs2023ai.Probabilistic, 
         edison.SDMA, edison.ML, edison.DM,
         idverify.TurnItIn, idverify.Oral ]
     },
@@ -436,13 +437,24 @@ addUnits([
 
         swebok.MathFoundations, swebok.CompFoundations, swebok.Construction, swebok.ProfPractice,
         ccdsc.CCF, ccdsc.AP, ccdsc.PDA, ccdsc.PR,
-        idverify.GroupWork, idverify.Video ]
+        edison.PM,
+        idverify.GroupWork, idverify.Video 
+      ],
+        outcomes: [
+          "explain how data and information is represented within a computer system and how it is manipulated to solve problems in a range of disciplines",
+          "solve problems and design software solutions using a high-level programming language and a range of technologies, protocols and algorithms",
+          "apply basic collaborative software development practices to work effectively with team members on small-scale software development projects",
+          "understand basic interaction design principles and apply these to the development of interactive software",
+          "demonstrate effectively written and oral communication skills to convey information, approaches and design decisions to a range of audiences"
+        ]
+      
     },
 
     {
       code: "COSC102",
       name: "Data Science Studio 1",
       prereq: [ choose(2, "COSC110", "STAT110") ],
+
       mappings: [  
         cbok.old.Programming.level(2), cbok.old.Teamwork.level(2), cbok.old.Communication.level(2), cbok.old.Data.level(1), cbok.old.ProblemSolving.level(1),
 
@@ -450,12 +462,14 @@ addUnits([
 
         swebok.MathFoundations, swebok.CompFoundations, swebok.EngFoundations, swebok.ProfPractice,
         ccdsc.CCF, ccdsc.AP, ccdsc.PDA, ccdsc.PR,
-        edison.DSDA,  
+        edison.ML,
+        edison.DM,
+        edison.DMORG,
 
         cybok.AD, 
 
         cs2023ai.FundamentalIssues, cs2023ai.FKRR, cs2023ai.Applications,
-
+     
 
         idverify.GroupWork, idverify.Video ]
     },
@@ -478,6 +492,18 @@ addUnits([
 
         idverify.ProctoredExam, idverify.TurnItIn, idverify.PersonalisedAssessment 
       ],
+
+      outcomes: [
+        "design, develop, test, and deliver computer programs to solve complex problems, both individually and as part of a collaborative development team;",
+        "apply modern software engineering tools, skills, and practices to create, analyse, and evolve software systems;",
+        "investigate and analyse new application areas, including understanding the needs of users and stakeholders, in order to design creative and appropriate solutions;",
+        "apply abstraction, mathematics, and theoretical principles to the design of computer programs;",
+        "communicate and collaborate effectively with others;",
+        "apply appropriate methods to manage and monitor software development projects;",
+        "apply ethical considerations, professionalism, and reflection to software development, with due consideration for impacts on others and society; and",
+        "demonstrate well-developed knowledge and critical analytical skills in at least one disciplinary area, with an ability to extend knowledge and analytical skills into other disciplinary areas."
+      ],
+
       assessments: [
         proctoredExam("Final Examination", 35, [], true)
       ]
@@ -495,7 +521,13 @@ addUnits([
         idverify.Video ],
       assessments: [
         proctoredExam("Final Examination", 40, [], true)
-      ]
+      ],
+
+      outcomes: [
+        "explain object oriented programming concepts including classes, objects, encapsulation, inheritance, and polymorphism",
+        "apply object oriented design principles to algorithm design and analysis",
+        "develop computer programs using Java, which is an object oriented programming language"
+      ],
     },
 
     {
@@ -513,8 +545,12 @@ addUnits([
         edison.EDMI,
 
         cybok.SS, 
+        idverify.ProctoredExam,
 
-        idverify.TurnItIn ]
+        idverify.TurnItIn ],
+        assessments: [
+        proctoredExam("Final Examination", 50, [], true)
+      ]
     },
 
     {
@@ -555,7 +591,7 @@ addUnits([
         cybok.SS, cybok.SAPS,
 
         idverify.TurnItIn, idverify.GroupWork, idverify.Project, idverify.DataTrails, idverify.Video ],
-      tags: [ "adv?" ], 
+      tags: [ "Advanced" ], 
       assessments: [
         assessment({
           name: "Collaborative project",
@@ -647,7 +683,7 @@ addUnits([
        
         idverify.ProctoredExam, idverify.Video 
       ],
-      tags: ["adv?"]
+      tags: []
     },
 
     {
@@ -704,12 +740,12 @@ addUnits([
     {
       code: "COSC510",
       name: "Software Project Management",
-      prereq: [ "COSC110", "COSC210" ],
+      prereq: [ or("COSC120", "COSC230", "COSC240") ],
       mappings: [ 
         cbok.old.Ethics.level(2), cbok.old.ProfExpectations.level(2), cbok.old.Teamwork.level(2), cbok.old.Communication.level(3), cbok.old.Systems.level(2), cbok.old.Governance.level(3), 
         cbok.old.ProjectManagement.level(3), cbok.old.HumanFactors.level(2),
 
-        cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(2), cbok.v3_2.Communication.level(3), cbok.v3_2.Projects.level(2), cbok.old.Governance.level(3), 
+        cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(2), cbok.v3_2.Communication.level(3), cbok.v3_2.Projects.level(2), cbok.v3_2.Governance.level(3), 
         cbok.v3_2.Application.level(2),
 
 
@@ -771,12 +807,14 @@ addUnits([
     {
       code: "COSC594",
       name: "Information Technology Project: Proposal and Design",
-      prereq: [ "COSC220", cp(48) ],
+      prereq: [ "COSC510", cp(48) ],
       mappings: [ 
         cbok.old.ProblemSolving.level(3), cbok.old.Ethics.level(2), cbok.old.ProfExpectations.level(2), cbok.old.Teamwork.level(3), cbok.old.Communication.level(3), cbok.old.Systems.level(3), cbok.old.ProjectManagement.level(3), cbok.old.Understanding.level(2),
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(3), cbok.v3_2.Communication.level(3), cbok.v3_2.Application.level(3), cbok.v3_2.Projects.level(3), cbok.v3_2.Depth.level(3),
         
         ccdsc.PR, edison.PM,
-        idverify.GroupWork, idverify.Project, idverify.TurnItIn, idverify.Video, idverify.Oral
+        idverify.GroupWork, idverify.Project, idverify.TurnItIn, idverify.Video, idverify.Oral,
+        cs2023ai.FKRR, cs2023ai.FundamentalIssues
       ],
       tags: [ "Advanced", "Capstone" ],
     },
@@ -784,12 +822,14 @@ addUnits([
     {
       code: "COSC595",
       name: "Information Technology Project: Implementation",
-      prereq: [ "COSC220", cp(48) ],
+      prereq: [ "COSC510", cp(48) ],
       mappings: [ 
         cbok.old.ProblemSolving.level(3), cbok.old.Ethics.level(2), cbok.old.ProfExpectations.level(2), cbok.old.Teamwork.level(3), cbok.old.Communication.level(3), cbok.old.Systems.level(3), cbok.old.ProjectManagement.level(3), cbok.old.Understanding.level(2),
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(3), cbok.v3_2.Communication.level(3), cbok.v3_2.Application.level(3), cbok.v3_2.Projects.level(3), cbok.v3_2.Depth.level(3),
         
         ccdsc.PR, edison.PM,
-        idverify.GroupWork, idverify.Project, idverify.TurnItIn, idverify.Video, idverify.Oral
+        idverify.GroupWork, idverify.Project, idverify.TurnItIn, idverify.Video, idverify.Oral,
+        cs2023ai.FKRR, cs2023ai.FundamentalIssues
       ],
       tags: [ "Advanced", "Capstone" ],
     },
@@ -820,12 +860,14 @@ addUnits([
       prereq: [ "COSC110", choose(2, "COSC210", "COSC220", "COSC230", "COSC240", "COSC250", "COSC260", "STAT210") ],
       mappings: [ 
         cbok.old.Fundamentals.level(3), cbok.old.Data.level(3), cbok.old.Networking.level(3), cbok.old.Systems.level(2),
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Computing.level(3), cbok.v3_2.Depth.level(3),
         
         swebok.Construction, swebok.CompFoundations, swebok.ModelsAndMethods,
         ccdsc.BDS, ccdsc.PDA,
         edison.BDI, // parallel computing, HPC
         edison.DSIAPP, // data processing models
         edison.DSAPPD, // CUDA
+        idverify.ProctoredExam
       ],
       tags: ["Advanced"],
     },
@@ -904,13 +946,16 @@ addUnits([
       prereq: [ "COSC110", choose(2, "COSC210", "COSC220", "COSC230", "COSC240", "COSC250", "COSC260", "STAT210") ],
       mappings: [ 
         cbok.old.Data.level(3), cbok.old.Programming.level(3), cbok.old.Fundamentals.level(2), cbok.old.Systems.level(2), cbok.old.ProblemSolving.level(2),
+        cbok.v3_2.Data.level(3), cbok.v3_2.Computing.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Impacts.level(2), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+        cs2023ai.FundamentalIssues, cs2023ai.Planning, cs2023ai.Robotics, cs2023ai.FKRR, cs2023ai.Search, cs2023ai.MachineLearning, cs2023ai.Logical, cs2023ai.Perception, cs2023ai.Agents,
         
         swebok.Construction,
         ccdsc.AI, ccdsc.ML, ccdsc.PDA,
         edison.ML,
         edison.PA,
         edison.DM,
-        edison.SDMA,
+        edison.SMDA,
+        edison.MODSIM,
         idverify.ProctoredExam 
       ],
       tags: ["Advanced"],
@@ -968,6 +1013,7 @@ addUnits([
       prereq: [ "COSC110", choose(2, "COSC210", "COSC220", "COSC230", "COSC240", "COSC250", "COSC260", "STAT210") ],
       mappings: [ 
         cbok.old.Communication.level(3), cbok.old.Societal.level(3), cbok.old.HumanFactors.level(3), cbok.old.Systems.level(3),
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Computing.level(2), cbok.v3_2.Practitioner.level(3), cbok.v3_2.Depth.level(3),
         swebok.Requirements, swebok.Design, swebok.ProfPractice, 
         ccdsc.AP, ccdsc.PR,
         idverify.Project, idverify.Video, idverify.TurnItIn 
@@ -1054,6 +1100,7 @@ addUnits([
       prereq: [ "MTHS120", or("COSC110", "SCI410") ],
       mappings: [ 
         cbok.old.Data.level(3), cbok.old.Programming.level(2), cbok.old.ProblemSolving.level(2),
+        cbok.v3_2.Data.level(3), cbok.v3_2.Computing.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
         swebok.Construction, swebok.MathFoundations,
         ccdsc.ML, ccdsc.PDA,
         edison.ML,
@@ -1061,7 +1108,8 @@ addUnits([
         edison.PA,
         edison.SMDA,
         edison.DSAPPD,      
-        idverify.Project, idverify.TurnItIn
+        idverify.Project, idverify.TurnItIn,
+        cs2023ai.MachineLearning, cs2023ai.FKRR, cs2023ai.Probabilistic, cs2023ai.FundamentalIssues, cs2023ai.Search,
       ],
       tags: ["Advanced"],
     },
@@ -1151,6 +1199,18 @@ addUnits([
     },
 
     {
+      code: "Advanced ICT Elective",
+      name: "Advanced ICT Elective",
+      prereq: [],
+      cbok: [],
+      swebok: [],
+      sfia: [],
+      dsbok: [],
+      tags: ["Advanced"],
+      other: []
+    },
+
+    {
       code: "Prescribed 500-level",
       name: "Advanced ICT Elective",
       prereq: [],
@@ -1185,6 +1245,17 @@ addUnits([
       tags: [],
       other: []
     },
+    {
+      code: "Additional Capstone",
+      name: "ICT Elective",
+      prereq: [],
+      cbok: [],
+      swebok: [],
+      sfia: [],
+      dsbok: [],
+      tags: [],
+      other: []
+    },
 
     {
       code: "COSC130",
@@ -1197,15 +1268,26 @@ addUnits([
 
 
         cybok.HORA, cybok.AD, cybok.SAPS, cybok.IS,
-
+        ccdsc.DP, ccdsc.PR,
         swebok.ProfPractice, swebok.Quality,
 
         cs2023ai.Applications,
+        edison.SEC,
+        edison.DMORG,
+        edison.DGOV,
+        idverify.ProctoredExam
 
         
       ],  
       assessments: [
           proctoredExam("Final examination", 40, [], true)
+      ],
+
+      outcomes: [
+        "understand the cybersecurity concepts and how they interrelate with each other, and analyse security breaches to identify services, mechanisms, threats and vulnerabilities that play a part in the breach",
+        "understand, interpret and discuss legal, ethical, cultural and privacy theories, issues and/or guidelines relevant to IT and cybersecurity, including AU Privacy Principles, and their impact on individuals, professionals and organisations in the modern world",
+        "understand cybersecurity threats faced by individuals and suggest strategies to alleviate these threats",
+        "understand cybersecurity threats and risks faced by organisations and conceptually design solutions to protect data and other resources"
       ]
     },
 
@@ -1253,9 +1335,9 @@ addUnits([
         cbok.v3_2.Infrastructure.level(3),
         cbok.v3_2.Depth.level(3),  
         
-
-
         cybok.AD,  cybok.SAPS, cybok.IS,
+
+        swebok.Quality, swebok.Testing
 
 
 
@@ -1288,6 +1370,8 @@ addUnits([
         cbok.v3_2.Depth.level(3),  
 
         cybok.HORA, cybok.SAPS, cybok.IS, cybok.SS, 
+
+        swebok.Process, swebok.ProfPractice, swebok.EngManagement
 
 
       ],
@@ -1377,7 +1461,7 @@ addUnits([
     {
       code: "COSC352",
       name: "Reinforcement Learning",
-      prereq: [ ],
+      prereq: [ or("COSC102", "COSC110"), "MTHS120", choose(1, "COSC210", "COSC220", "COSC230", "COSC240")],
       mappings: [
 
         cbok.old.Programming.level(3), cbok.old.Data.level(3), cbok.old.ProblemSolving.level(2), cbok.old.Fundamentals.level(2),
@@ -1390,5 +1474,191 @@ addUnits([
       tags: [ "Advanced" ],
       other: []
     },
+    
+    {
+      code: "COSC551",
+      name: "Deep Learning",
+      prereq: [ "AMTH405", or("COSC110", "COSC102"), cp(12) ],
+      mappings: [
+        cbok.old.Programming.level(3), cbok.old.Data.level(3), cbok.old.Networking.level(3), cbok.old.ProblemSolving.level(2), cbok.old.Fundamentals.level(2),
+        cbok.v3_2.Computing.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
+        cs2023ai.NLP, cs2023ai.Perception, cs2023ai.Probabilistic, cs2023ai.MachineLearning, cs2023ai.FKRR,
+        ccdsc.AP,ccdsc.ML,ccdsc.AI,ccdsc.DM,
+        edison.ML,
+        edison.DM,
+        edison.PA,
+        edison.TDM,
+        idverify.ProctoredExam
+        
+
+
+      ],
+      tags: [ "Advanced" ],  
+      assessments: [
+          proctoredExam("Open book final examination", 30, [], true)
+      ]
+    },
+
+
+    {
+      code: "COSC552",
+      name: "Reinforcement Learning",
+      prereq: [ "AMTH405", or("COSC110", "COSC102"), cp(12) ],
+      mappings: [
+
+        cbok.old.Programming.level(3), cbok.old.Data.level(3), cbok.old.ProblemSolving.level(2), cbok.old.Fundamentals.level(2),
+        cbok.v3_2.Computing.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
+        cs2023ai.FundamentalIssues, cs2023ai.Probabilistic, cs2023ai.MachineLearning, cs2023ai.FKRR, cs2023ai.Robotics,cs2023ai.Logical,
+        ccdsc.AP, ccdsc.ML, ccdsc.AI, ccdsc.PDA,
+        edison.ML,
+        edison.DM,
+        edison.MODSIM,
+        edison.PA,
+        idverify.ProctoredExam
+
+      ],
+      tags: [ "Advanced" ],
+      other: []
+    },
+    
+    {
+      code: "COSC531",
+      name: "Machine Learning with Big Data",
+      prereq: [ "AMTH405", or("COSC110", "COSC102"), cp(12) ],
+      mappings: [
+        cbok.old.Programming.level(3), cbok.old.Data.level(3), cbok.old.Networking.level(3), cbok.old.ProblemSolving.level(2), cbok.old.Fundamentals.level(2),
+
+        cbok.v3_2.Computing.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
+        cs2023ai.MachineLearning, cs2023ai.FundamentalIssues, cs2023ai.FKRR, cs2023ai.Applications,
+        ccdsc.BDS, ccdsc.DG, ccdsc.PR, ccdsc.ML,
+        edison.BDI,
+        edison.BDSE,
+        edison.DMORG,
+        edison.BDSTOR,
+        edison.EDMI,
+        idverify.ProctoredExam
+
+      ],
+      tags: [ "Advanced" ],
+
+    },
+    
+    {
+      code: "AMTH405",
+      name: "Mathematics for Machine Learning and Artificial Intelligence",
+      prereq: [ ],
+      mappings: [
+        cbok.old.Programming.level(3), cbok.old.Data.level(3), cbok.old.Networking.level(3), cbok.old.ProblemSolving.level(2), cbok.old.Fundamentals.level(2),
+
+        cbok.v3_2.Computing.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Fundamentals.level(2), cbok.v3_2.Depth.level(3),
+
+        cs2023ai.MachineLearning, cs2023ai.FundamentalIssues, cs2023ai.FKRR, cs2023ai.Applications,
+        ccdsc.AP, ccdsc.ML,
+        edison.SMDA,
+        edison.RM,
+        edison.PA,
+        idverify.ProctoredExam
+
+
+      ],
+      tags: [ "Advanced" ],
+
+    }, 
+    {
+      code: "COSC593",
+      name: "Computer Science/IT Thesis",
+      prereq: [ cp(24), "permission of HoS"],
+      mappings: [ 
+        cbok.v3_2.Data.level(3), cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Depth.level(3),
+        cbok.old.Data.level(3), cbok.old.ProblemSolving.level(3), 
+        
+        
+        
+        cs2023ai.FKRR, cs2023ai.FundamentalIssues,
+        ccdsc.AP, ccdsc.PR, ccdsc.PDA, ccdsc.SDM,
+        edison.RM,
+        idverify.TurnItIn, idverify.Project, idverify.PersonalisedAssessment 
+      ],
+      tags: [ "Advanced", "Capstone" ],
+    },
+
+    {
+      code: "PHYS311",
+      name: "Digital Electronic Systems",
+      prereq: [ or("AMTH140", "ICT101") ],
+    },
+
+    {
+      code: "ICT363",
+      name: "Embedded Systems and Sensors",
+      prereq: [ or("ICT101", "PHYS311"), choose(1, "COSC230", "COSC240", "COSC250")],
+      mappings: [
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Data.level(3),
+        edison.MODSIM, 
+        swebok.Construction, swebok.CompFoundations, swebok.EngFoundations
+      ],
+      tags: [ "Advanced" ],
+    },
+
+    {
+      code: "COSC361",
+      name: "Internet of Things",
+      prereq: [ or("ICT101", "AMTH140"), or("COSC220", "COSC260")],
+      mappings: [
+        cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Cybersecurity.level(3), 
+        edison.DM, edison.CCT,
+        cybok.SAPS, cybok.IS,
+        swebok.Construction, swebok.Design, swebok.Quality
+
+      ],
+      tags: [ "Advanced" ],
+    },
+
+
+    {
+      code: "IoT Group 2",
+      name: "Group 2 ICT Unit",
+      prereq: [],
+      tags: [ "Advanced" ],
+    },
+
+    {
+      code: "IS & Cybersecurity Group 1",
+      name: "Group 1 ICT Unit",
+      prereq: [],
+      tags: [  ],
+    },
+
+    {
+      code: "IS & Cybersecurity Group 2",
+      name: "Group 2 ICT Unit",
+      prereq: [],
+      tags: [ "Advanced" ],
+    },
+
+    {
+      code: "Software Dev Group 1",
+      name: "Group 1 ICT Unit",
+      prereq: [],
+      tags: [ ],
+    },
+
+    {
+      code: "Adv Software Dev Group 2",
+      name: "Group 2 ICT Unit",
+      prereq: [],
+      tags: [ "Advanced" ],
+    },
+
+    {
+      code: "Software Dev Group 2",
+      name: "Group 2 ICT Unit",
+      prereq: [],
+      tags: [ ],
+    },
+
 
   ])

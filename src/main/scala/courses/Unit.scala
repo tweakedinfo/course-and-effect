@@ -66,7 +66,7 @@ extension (els:Seq[PrereqElement]) {
   def stringify:String = 
     els.map({
       case s:PrereqElement.unit => s.code
-      case PrereqElement.or(a, b) => s"($a or $b)"
+      case PrereqElement.or(a, b) => s"(${a.code} or ${b.code})"
       case PrereqElement.choose((from, to), units) => s"($from-$to from ${units.map(_.code).mkString(", ")})"
       case PrereqElement.choose(num, units) => s"($num from ${units.map(_.code).mkString(", ")})"
       case PrereqElement.cp(num) => s"${num}cp"
@@ -130,7 +130,7 @@ def addUnit(config:js.Dynamic) = {
       }).toSeq,
       tags = if config.tags then config.tags.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
 
-      learningOutcomes = if config.learningOutcomes then config.tags.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
+      learningOutcomes = if config.outcomes then config.outcomes.asInstanceOf[js.Array[String]].toSeq else Seq.empty,
 
       assessments = if config.assessments then config.assessments.asInstanceOf[js.Array[Assessment]].toSeq else Seq.empty,
     )

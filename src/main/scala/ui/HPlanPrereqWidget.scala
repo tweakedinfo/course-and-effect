@@ -12,24 +12,24 @@ import courses.*
 
 case class HPlanChooser(course:Course) extends VHtmlComponent {
 
-  var selected = course.plans.headOption.map(_._1)
+
+  val selected = stateVariable(course.plans.headOption.map(_._1))
 
   def render = {
     <.div(
       <("select")(
         ^.on("change") ==> { (evt) =>
-          selected = evt.inputValue
-          rerender()
+          selected.value = Some(evt.target.asInstanceOf[dom.html.Input].value)
         },
         ^.attr("name") := "Plan",
         for 
           (name, plan) <- course.plans
         yield
-          <("option")(^.attr("value") := name, name)
+          <.option(name)
       ),
       <.div(
         for 
-          name <- selected
+          name <- selected.value
           (_, plan) <- course.plans.find((n, _) => n == name)
         yield HPlanPrereqWidget2(course, plan)
       )
