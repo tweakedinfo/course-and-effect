@@ -717,7 +717,7 @@ addUnits([
       mappings: [ 
         cbok.old.Ethics.level(2), cbok.old.ProfExpectations.level(2), cbok.old.Teamwork.level(2), cbok.old.Communication.level(3), cbok.old.Systems.level(2), cbok.old.Governance.level(3), cbok.old.ProjectManagement.level(3), cbok.old.HumanFactors.level(2),
        
-        cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(2), cbok.v3_2.Communication.level(3), cbok.v3_2.Projects.level(2), cbok.v3_2.Governance.level(3), cbok.v3_2.Application.level(2), cbok.v3_2.Impacts.level(2),
+        cbok.v3_2.Ethics.level(2), cbok.v3_2.Practitioner.level(2), cbok.v3_2.Collaboration.level(2), cbok.v3_2.Communication.level(3), cbok.v3_2.Projects.level(2), cbok.v3_2.Governance.level(3), cbok.v3_2.Application.level(2), cbok.v3_2.Impacts.level(2), cbok.v3_2.Depth.level(3),
 
 
         swebok.Requirements, swebok.Maintenance, swebok.EngManagement, swebok.Process, swebok.Quality, swebok.ProfPractice, swebok.Economics,
@@ -1589,6 +1589,9 @@ addUnits([
       code: "PHYS311",
       name: "Digital Electronic Systems",
       prereq: [ or("AMTH140", "ICT101") ],
+      mappings: [
+        cbok.v3_2.Infrastructure.level(3),  cbok.v3_2.Depth.level(3),
+      ]
     },
 
     {
@@ -1596,7 +1599,7 @@ addUnits([
       name: "Embedded Systems and Sensors",
       prereq: [ or("ICT101", "PHYS311"), choose(1, "COSC230", "COSC240", "COSC250")],
       mappings: [
-        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Data.level(3),
+        cbok.v3_2.Fundamentals.level(3), cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Depth.level(3),
         edison.MODSIM, 
         swebok.Construction, swebok.CompFoundations, swebok.EngFoundations
       ],
@@ -1608,7 +1611,7 @@ addUnits([
       name: "Internet of Things",
       prereq: [ or("ICT101", "AMTH140"), or("COSC220", "COSC260")],
       mappings: [
-        cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Cybersecurity.level(3), 
+        cbok.v3_2.Infrastructure.level(3), cbok.v3_2.Data.level(3), cbok.v3_2.Cybersecurity.level(3), cbok.v3_2.Depth.level(3),
         edison.DM, edison.CCT,
         cybok.SAPS, cybok.IS,
         swebok.Construction, swebok.Design, swebok.Quality

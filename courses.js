@@ -257,7 +257,7 @@ addCourses([
     },
     pages: [
       // cbok.old.page, 
-      cbok.v3_2.page, effects.page
+      cbok.v3_2.page, effects.page, edison.page
     ],
     learningOutcomes: [
       
@@ -590,6 +590,55 @@ limitCourseGridEntries([ "MDSC" ], cbok.old.Governance, ["COSC510"])
 limitCourseGridEntries([ "MDSC" ], cbok.old.ProjectManagement, ["COSC510", "COSC591", "COSC572"])
 limitCourseGridEntries([ "MDSC" ], cbok.old.ServiceManagement, ["COSC572"])
 limitCourseGridEntries([ "MDSC" ], cbok.old.Cybersecurity, ["COSC210", "COSC572" ])
+
+
+
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Ethics, ["COSC110", "COSC130", "COSC310"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Impacts, ["COSC110", "COSC130", "COSC310"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Collaboration, ["COSC110", "COSC220", "COSC320"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Communication, ["COSC220", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Practitioner, ["COSC130", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Fundamentals, ["ICT101", "COSC110", "COSC220"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Infrastructure, ["ICT101", "COSC240", "COSC361", "ICT363"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Data, ["ICT101", "COSC210", "COSC102", "STAT100" ])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Computing, ["COSC110", "COSC120", "COSC220", ])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Application, ["COSC220", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Cybersecurity, ["COSC130", "COSC210", "COSC240"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Projects, ["COSC220", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Governance, ["COSC130", "COSC220", "COSC310"])
+limitCourseGridEntries([ "BIT(IoT)",  ], cbok.v3_2.Depth, ["COSC220", "COSC310", "COSC320", "COSC330", "COSC331", "COSC340", "COSC350", "COSC351", "COSC352", "COSC361", "COSC380", "COSC483", "ICT363", "PHYS311"])
+
+
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Ethics, ["COSC110", "COSC130", "COSC310"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Impacts, ["COSC130", "COSC310", "COSC372"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Collaboration, ["COSC110", "COSC220", "COSC320"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Communication, ["COSC220", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Practitioner, ["COSC130", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Fundamentals, ["ICT101", "COSC220", "COSC370"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Infrastructure, ["ICT101", "COSC240", "COSC260"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Data, ["ICT101", "COSC210", "COSC372" ])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Computing, ["COSC110", "COSC120", "COSC220", ])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Application, ["COSC310", "COSC370", "COSC372"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Cybersecurity, ["COSC130", "COSC210", "COSC240"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Projects, ["COSC220", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Governance, ["COSC130", "COSC220", "COSC310"])
+limitCourseGridEntries([ "BIT(IS)",  ], cbok.v3_2.Depth, ["COSC220", "COSC310","COSC320",  "COSC330", "COSC331", "COSC340", "COSC350", "COSC351", "COSC352", "COSC361", "COSC370", "COSC372", "COSC380", "COSC482", "COSC483", "COSC484", "ICT363", "PHYS311"])
+
+
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Ethics, ["COSC110", "COSC130", "COSC310"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Impacts, ["COSC110", "COSC130", "COSC310", ])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Collaboration, ["COSC110", "COSC220", "COSC320"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Communication, ["COSC220", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Practitioner, ["COSC130", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Fundamentals, ["ICT101", "COSC220", "COSC230"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Infrastructure, ["ICT101", "COSC240", "COSC220"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Data, ["ICT101", "COSC210", "COSC230" ])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Computing, ["COSC110", "COSC120", "COSC230", ])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Application, ["COSC310", "COSC220", "COSC320"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Cybersecurity, ["COSC130", "COSC210", "COSC240"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Projects, ["COSC220", "COSC310", "COSC320"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Governance, ["COSC130", "COSC220", "COSC310"])
+limitCourseGridEntries([ "BIT(SD)",  ], cbok.v3_2.Depth, ["COSC220", "COSC250", "COSC310", "COSC320", "COSC330", "COSC331", "COSC340", "COSC350", "COSC351", "COSC352", "COSC360", "COSC361", "COSC370", "COSC372", "COSC380", "COSC482", "COSC483", "COSC484", "ICT363", "PHYS311"])
 
 
 // Top 3 for MAI
